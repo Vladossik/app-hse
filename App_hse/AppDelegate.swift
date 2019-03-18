@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import SwiftyVK
+
+var vkDelegateReference : SwiftyVKDelegate?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storageManager = StorageManager(coreDataStack: CoreDataStack(resourceName: "Model"))
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //vkDelegateReference = VKDelegate()
+        //(vkDelegateReference as! VKDelegate).vkTokenRemoved(for: "")
+        
+//        let defaults = UserDefaults.standard
+//        if let token = defaults.string(forKey: defaultsKeys.token), !token.isEmpty {
+//            skipLogin()
+//            return true
+//        }v
+        
+        vkDelegateReference = VKDelegate()
+        VK.setUp(appId: "6849870", delegate: vkDelegateReference!)
+        (vkDelegateReference as! VKDelegate).silentLogin()
         return true
     }
 
@@ -41,6 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func skipLogin() {
+        let bundle = Bundle.main
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "SWRevealViewController")
+        window?.makeKeyAndVisible()
+    }
 }
 

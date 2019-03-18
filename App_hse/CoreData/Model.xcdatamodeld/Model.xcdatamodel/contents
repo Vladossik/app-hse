@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Community" representedClassName="Community" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="posts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="community" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="community" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Community" inverseName="posts" inverseEntity="Community" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="URI" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="User" positionX="-54" positionY="0" width="128" height="105"/>
+        <element name="Community" positionX="-63" positionY="27" width="128" height="90"/>
+    </elements>
+</model>
