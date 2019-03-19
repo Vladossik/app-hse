@@ -1,34 +1,41 @@
 //
-//  ProfileViewController.swift
+//  AboutAppViewController.swift
 //  App_hse
 //
-//  Created by Vladislava on 18/03/2019.
+//  Created by Vladislava on 19/03/2019.
 //  Copyright © 2019 VladislavaVakulenko. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    
+class AboutAppViewController: UIViewController {
+
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var versionApp: UILabel!
+    @IBOutlet weak var appIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sideMenu()
         
-//        avatar.layer.cornerRadius = avatar.frame.size.width / 2
-//        avatar.clipsToBounds = true
-  
+        let ver = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+        
+        versionApp.text = String("version \(ver) (\(build))")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
-        self.avatar.clipsToBounds = true
+        self.appIcon.layer.cornerRadius = self.appIcon.frame.size.width / 2
+        self.appIcon.clipsToBounds = true
         
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // left side menu
@@ -42,4 +49,5 @@ class ProfileViewController: UIViewController {
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }
+
 }

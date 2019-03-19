@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-K9-0h3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-K9-0h3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.99987143278121948" green="1" blue="0.99556916952133179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -26,8 +26,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gyG-K9-0h3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5UK-pz-gbx"/>
+                            <constraint firstItem="gyG-K9-0h3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5rN-iF-cbc"/>
+                            <constraint firstItem="gyG-K9-0h3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Spm-rX-CE6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gyG-K9-0h3" secondAttribute="trailing" id="W96-wp-uqB"/>
+                            <constraint firstItem="gyG-K9-0h3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bxF-8S-S4X"/>
                             <constraint firstItem="gyG-K9-0h3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dDr-IX-jyV"/>
+                            <constraint firstItem="gyG-K9-0h3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eyg-4J-Ezl"/>
                             <constraint firstAttribute="bottom" secondItem="gyG-K9-0h3" secondAttribute="bottom" id="vo9-3i-Z1s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
