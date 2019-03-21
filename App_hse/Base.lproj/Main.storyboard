@@ -332,6 +332,10 @@
                             <outlet property="delegate" destination="4lP-1z-iB6" id="fMY-Sx-ZtF"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="avatarUser" destination="8Qg-q8-nnA" id="yxK-Cn-Dgf"/>
+                        <outlet property="name" destination="Oe8-pC-Hph" id="ldf-dx-R98"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQ3-vn-m3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
