@@ -13,6 +13,7 @@ extension Post {
     @nonobjc static func insert(_ item: Item, profile: Profile, in context: NSManagedObjectContext) {
         let post = Post(context: context)
         post.text = item.text
+        post.id = Int64(item.id)
         
         let user = User(context: context)
         user.name = profile.firstName
@@ -25,6 +26,7 @@ extension Post {
     @nonobjc static func insert(_ item: Item, group: Group, in context: NSManagedObjectContext) {
         let post = Post(context: context)
         post.text = item.text
+        post.id = Int64(item.id)
         
         let community = Community(context: context)
         community.avatar = URL(string: group.photo50)

@@ -131,6 +131,7 @@ struct Profile: Codable {
 
 struct PostInfo {
     
+    let id: Int
     let text: String
     let avatarURL: URL
     let name: String

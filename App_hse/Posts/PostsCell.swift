@@ -31,6 +31,7 @@ class PostsCell: UITableViewCell {
     var profile: Profile?
     var group: Group?
     var item: Item?
+    var postInfo: PostInfo?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,6 +50,10 @@ class PostsCell: UITableViewCell {
         self.item = item
     }
     
+    func setup(postInfo: PostInfo) {
+        self.postInfo = postInfo
+    }
+    
     private func saveAsFavorite() {
         guard let item = item else { return }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -65,6 +70,8 @@ class PostsCell: UITableViewCell {
     }
     
     private func removeFromFavorites() {
-//        unused
+        guard let postInfo = postInfo else { return }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.storageManager.delete(by: postInfo.id)
     }
 }

@@ -174,9 +174,11 @@ class StorageManager {
                     
                     let surname = post.user?.surname
                     
-                    return PostInfo(text: text,
+                    return PostInfo(id: Int(post.id),
+                                    text: text,
                                     avatarURL: avatarURL,
-                                    name: name, surname: surname)
+                                    name: name,
+                                    surname: surname)
                 }
                 
                 completion(items)
@@ -186,8 +188,19 @@ class StorageManager {
         }
     }
     
-    func delete() {
-        // unused
+    func delete(by id: Int) {
+        let fetchRequest = NSFetchRequest<Post>(entityName: "Post")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id as NSNumber)
+        
+        do {
+            let posts = try coreDataStack.mainContext.fetch(fetchRequest)
+            if !posts.isEmpty {
+                coreDataStack.mainContext.delete(posts[0])
+                try coreDataStack.mainContext.save()
+            }
+        } catch {
+            print(error)
+        }
     }
     
     func saveFavoritePost(_ post: Item, profile: Profile, completion: @escaping (String?) -> ()) {

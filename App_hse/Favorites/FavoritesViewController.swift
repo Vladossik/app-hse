@@ -36,6 +36,10 @@ class FavoritesViewController: UITableViewController {
             cell.textPost?.text = post.text
             cell.nameUser?.text = post.name
             cell.lastNameUser?.text = post.surname
+            cell.clicked = true
+            
+            cell.setup(postInfo: post)
+            
             return cell
         } else {
             return UITableViewCell(style: .default, reuseIdentifier: "\(PostsCell.self)")
