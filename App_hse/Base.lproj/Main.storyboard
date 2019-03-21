@@ -33,28 +33,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-ad-5gY">
-                                <rect key="frame" x="37" y="104" width="301" height="459"/>
+                                <rect key="frame" x="38.5" y="139.5" width="298" height="388"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoHSE" translatesAutoresizingMaskIntoConstraints="NO" id="fUX-wa-j3w">
-                                        <rect key="frame" x="161" y="92" width="120" height="120"/>
+                                        <rect key="frame" x="158" y="65" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="8N2-AT-rGI"/>
                                             <constraint firstAttribute="height" constant="120" id="Usz-ea-h8M"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="HSE Dormitory" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="llv-zn-6Vc">
-                                        <rect key="frame" x="16" y="136" width="124" height="19"/>
+                                        <rect key="frame" x="16" y="113" width="121" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" textContentType="organization-title"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You must have an account" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN7-Wt-BiS">
-                                        <rect key="frame" x="30" y="277" width="241" height="15"/>
+                                        <rect key="frame" x="30" y="245" width="238" height="15"/>
                                         <color key="textColor" red="0.078431372549019607" green="0.3529411764705882" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFj-3y-Krv">
-                                        <rect key="frame" x="30" y="306" width="241" height="53"/>
+                                        <rect key="frame" x="30" y="274" width="238" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="04t-f5-D5F"/>
                                         </constraints>
@@ -69,15 +69,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="llv-zn-6Vc" firstAttribute="top" secondItem="6Hs-ad-5gY" secondAttribute="top" constant="136" id="3vW-Bd-lGW"/>
+                                    <constraint firstItem="llv-zn-6Vc" firstAttribute="top" secondItem="6Hs-ad-5gY" secondAttribute="top" constant="113" id="3vW-Bd-lGW"/>
+                                    <constraint firstAttribute="width" constant="298" id="Bx8-tY-G7S"/>
                                     <constraint firstItem="fUX-wa-j3w" firstAttribute="leading" secondItem="llv-zn-6Vc" secondAttribute="trailing" constant="21" id="JED-Od-cW0"/>
                                     <constraint firstItem="llv-zn-6Vc" firstAttribute="leading" secondItem="6Hs-ad-5gY" secondAttribute="leading" constant="16" id="JEN-6e-HR8"/>
                                     <constraint firstAttribute="trailing" secondItem="fUX-wa-j3w" secondAttribute="trailing" constant="20" id="Q8M-90-62s"/>
-                                    <constraint firstItem="GN7-Wt-BiS" firstAttribute="top" secondItem="fUX-wa-j3w" secondAttribute="bottom" constant="65" id="RBc-Nc-i2C"/>
+                                    <constraint firstItem="GN7-Wt-BiS" firstAttribute="top" secondItem="fUX-wa-j3w" secondAttribute="bottom" constant="60" id="RBc-Nc-i2C"/>
                                     <constraint firstItem="mFj-3y-Krv" firstAttribute="trailing" secondItem="GN7-Wt-BiS" secondAttribute="trailing" id="bdc-6u-SFD"/>
                                     <constraint firstItem="GN7-Wt-BiS" firstAttribute="leading" secondItem="6Hs-ad-5gY" secondAttribute="leading" constant="30" id="g2D-21-DDo"/>
-                                    <constraint firstItem="fUX-wa-j3w" firstAttribute="top" secondItem="6Hs-ad-5gY" secondAttribute="top" constant="92" id="gUS-5c-Smo"/>
+                                    <constraint firstItem="fUX-wa-j3w" firstAttribute="top" secondItem="6Hs-ad-5gY" secondAttribute="top" constant="65" id="gUS-5c-Smo"/>
                                     <constraint firstItem="mFj-3y-Krv" firstAttribute="top" secondItem="GN7-Wt-BiS" secondAttribute="bottom" constant="14" id="it3-bc-b4F"/>
+                                    <constraint firstAttribute="height" constant="388" id="oEh-hT-mOI"/>
                                     <constraint firstAttribute="trailing" secondItem="GN7-Wt-BiS" secondAttribute="trailing" constant="30" id="uke-bZ-z87"/>
                                     <constraint firstItem="mFj-3y-Krv" firstAttribute="leading" secondItem="GN7-Wt-BiS" secondAttribute="leading" id="zJc-HS-S1C"/>
                                 </constraints>
@@ -90,8 +92,6 @@
                             <constraint firstItem="QVn-G0-dB1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HCu-Ii-11Z"/>
                             <constraint firstItem="6Hs-ad-5gY" firstAttribute="centerX" secondItem="QVn-G0-dB1" secondAttribute="centerX" id="Iua-zM-RT4"/>
                             <constraint firstItem="QVn-G0-dB1" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="KSK-9l-Rv8"/>
-                            <constraint firstItem="6Hs-ad-5gY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="104" id="PUN-tu-sYq"/>
-                            <constraint firstItem="6Hs-ad-5gY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="R0L-aS-Z8d"/>
                             <constraint firstItem="QVn-G0-dB1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p6q-dV-RfM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-1141"/>
+            <point key="canvasLocation" x="616.79999999999995" y="-1141.0794602698652"/>
         </scene>
         <!--Side Menu-->
         <scene sceneID="xMa-p8-yKc">
