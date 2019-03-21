@@ -32,7 +32,6 @@ class PostsViewController: UITableViewController {
         
         dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/wall.get?owner_id=-177771483&fields=first_name,last_name,photo_50&extended=1&v=5.92&access_token=" + VKDelegate.token)!) { data, r, error in
             if error == nil, let data = data {
-                print(data)
                 let response = try? JSONDecoder().decode(Welcome.self, from: data)
                 self.posts = response!.response.items
                 self.profiles = response!.response.profiles

@@ -47,7 +47,7 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" textContentType="organization-title"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You must have an account" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN7-Wt-BiS">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You must have an account" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN7-Wt-BiS">
                                         <rect key="frame" x="30" y="245" width="238" height="15"/>
                                         <color key="textColor" red="0.078431372549019607" green="0.3529411764705882" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
@@ -118,7 +118,7 @@
                         <sections>
                             <tableViewSection id="Ctn-u0-uXg">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="aIn-uR-qFx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="154" id="aIn-uR-qFx">
                                         <rect key="frame" x="0.0" y="35" width="375" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aIn-uR-qFx" id="p8w-2I-vmw">
@@ -126,20 +126,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="8Qg-q8-nnA">
-                                                    <rect key="frame" x="101" y="11" width="173" height="131.5"/>
+                                                    <rect key="frame" x="84.5" y="11" width="131.5" height="131.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8Qg-q8-nnA" secondAttribute="height" multiplier="1:1" id="F0q-rY-7G5"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8Qg-q8-nnA" firstAttribute="centerX" secondItem="p8w-2I-vmw" secondAttribute="centerX" id="5CP-BG-jQ4"/>
-                                                <constraint firstItem="8Qg-q8-nnA" firstAttribute="centerY" secondItem="p8w-2I-vmw" secondAttribute="centerY" id="6XA-2d-PfU"/>
-                                                <constraint firstItem="8Qg-q8-nnA" firstAttribute="leading" secondItem="p8w-2I-vmw" secondAttribute="leadingMargin" constant="85" id="8wU-hL-L3P"/>
+                                                <constraint firstItem="8Qg-q8-nnA" firstAttribute="centerX" secondItem="p8w-2I-vmw" secondAttribute="centerX" multiplier="4:5" id="5CP-BG-jQ4"/>
+                                                <constraint firstItem="8Qg-q8-nnA" firstAttribute="centerY" secondItem="p8w-2I-vmw" secondAttribute="centerY" multiplier="1:1" id="6XA-2d-PfU"/>
                                                 <constraint firstItem="8Qg-q8-nnA" firstAttribute="top" secondItem="p8w-2I-vmw" secondAttribute="topMargin" id="OZq-hc-Bch"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Qg-q8-nnA" secondAttribute="trailing" constant="85" id="u8S-tW-O0q"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mZv-jQ-gbl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mZv-jQ-gbl">
                                         <rect key="frame" x="0.0" y="189" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mZv-jQ-gbl" id="3Ov-gd-SY9">
@@ -859,7 +860,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuJ-On-jde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4188" y="1205.8470764617691"/>
+            <point key="canvasLocation" x="3249" y="1206"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="M4a-J8-son">
@@ -977,7 +978,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk7-iD-usu">
                                 <rect key="frame" x="160" y="196" width="55" height="19"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2019 Vladossik" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB1-KQ-Yek">
@@ -995,7 +995,6 @@
 
 by Vlada Vakulenko</string>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                <color key="textColor" red="0.078431372550000003" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1026,7 +1025,7 @@ by Vlada Vakulenko</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6x-Zy-gp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1503.2" y="2010.9445277361322"/>
+            <point key="canvasLocation" x="-1271" y="2011"/>
         </scene>
         <!--Profile-->
         <scene sceneID="bts-JR-UUu">
@@ -1121,7 +1120,7 @@ by Vlada Vakulenko</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfC-Wg-Sb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1503" y="1206"/>
+            <point key="canvasLocation" x="-1270" y="1206"/>
         </scene>
     </scenes>
     <resources>

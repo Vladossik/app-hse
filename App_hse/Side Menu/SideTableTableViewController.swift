@@ -17,7 +17,7 @@ class SideTableTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.clearsSelectionOnViewWillAppear = true
-       
+        showUserInfo()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -26,5 +26,30 @@ class SideTableTableViewController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func showUserInfo() {
+        let session = URLSession(configuration: .default)
+        var dataTask: URLSessionDataTask?
+        
+        dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + VKDelegate.token)!) { [weak self] data, r, error in
+            guard let self = self else { return }
+            
+            if error == nil, let data = data {
+                let response = try? JSONDecoder().decode(ProfileUser.self, from: data)
+                guard let userData = response?.response[0] else { return }
+                
+                DispatchQueue.main.async {
+                    self.avatarUser.kf.setImage(with: URL(string: userData.photo100))
+                    self.avatarUser.layer.cornerRadius = self.avatarUser.frame.size.width / 2
+                    self.avatarUser.clipsToBounds = true
+                    self.name.text = "\(userData.firstName) \(userData.lastName)"
+
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        dataTask?.resume()
     }
 }
