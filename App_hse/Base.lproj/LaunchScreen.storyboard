@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,21 +23,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="gyG-K9-0h3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backfround" highlightedImage="Backfround" translatesAutoresizingMaskIntoConstraints="NO" id="5Fn-Zs-Fgn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.99987143278121948" green="1" blue="0.99556916952133179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeW-fb-J0Z">
+                                <rect key="frame" x="38.5" y="139.5" width="298" height="388"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoHSE" translatesAutoresizingMaskIntoConstraints="NO" id="6hJ-tH-inP">
+                                        <rect key="frame" x="74" y="65" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Ybs-ZZ-s2h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIm-8C-nJL">
+                                        <rect key="frame" x="68" y="235" width="162" height="83"/>
+                                        <string key="text">Welcome 
+to
+HSE Dormitory!</string>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                        <color key="textColor" red="0.078431372550000003" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KIm-8C-nJL" firstAttribute="leading" secondItem="JeW-fb-J0Z" secondAttribute="leading" constant="68" id="2aY-xZ-AKw"/>
+                                    <constraint firstItem="6hJ-tH-inP" firstAttribute="top" secondItem="JeW-fb-J0Z" secondAttribute="top" constant="65" id="Hbr-TZ-kXy"/>
+                                    <constraint firstItem="6hJ-tH-inP" firstAttribute="leading" secondItem="JeW-fb-J0Z" secondAttribute="leading" constant="74" id="MFt-51-Mom"/>
+                                    <constraint firstAttribute="trailing" secondItem="6hJ-tH-inP" secondAttribute="trailing" constant="74" id="PkU-2f-bO6"/>
+                                    <constraint firstAttribute="bottom" secondItem="KIm-8C-nJL" secondAttribute="bottom" constant="70" id="TLw-EX-LCI"/>
+                                    <constraint firstItem="KIm-8C-nJL" firstAttribute="top" secondItem="6hJ-tH-inP" secondAttribute="bottom" constant="20" id="Tfv-Jv-nqI"/>
+                                    <constraint firstItem="KIm-8C-nJL" firstAttribute="centerX" secondItem="6hJ-tH-inP" secondAttribute="centerX" id="g48-Ha-1lN"/>
+                                    <constraint firstAttribute="width" constant="298" id="gWU-V7-Ryo"/>
+                                    <constraint firstAttribute="height" constant="388" id="xt9-Hv-QTF"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5UK-pz-gbx"/>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5rN-iF-cbc"/>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Spm-rX-CE6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gyG-K9-0h3" secondAttribute="trailing" id="W96-wp-uqB"/>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bxF-8S-S4X"/>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dDr-IX-jyV"/>
-                            <constraint firstItem="gyG-K9-0h3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eyg-4J-Ezl"/>
-                            <constraint firstAttribute="bottom" secondItem="gyG-K9-0h3" secondAttribute="bottom" id="vo9-3i-Z1s"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="62h-W3-VYP"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HUQ-nb-3wC"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JcZ-DV-g7X"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OKV-BE-hoR"/>
+                            <constraint firstItem="JeW-fb-J0Z" firstAttribute="centerY" secondItem="5Fn-Zs-Fgn" secondAttribute="centerY" id="TKl-kG-FKn"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TX9-U3-QbW"/>
+                            <constraint firstItem="JeW-fb-J0Z" firstAttribute="centerX" secondItem="5Fn-Zs-Fgn" secondAttribute="centerX" id="Um1-b4-QXK"/>
+                            <constraint firstItem="5Fn-Zs-Fgn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kD4-Q8-hNL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -43,6 +79,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="375" height="667"/>
+        <image name="Backfround" width="375" height="667"/>
+        <image name="LogoHSE" width="700" height="700"/>
     </resources>
 </document>
