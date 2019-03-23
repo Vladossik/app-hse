@@ -1036,20 +1036,17 @@ by Vlada Vakulenko</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backfround" translatesAutoresizingMaskIntoConstraints="NO" id="bpM-rP-tW5">
-                                <rect key="frame" x="137.66666666666666" y="117" width="100" height="100"/>
+                                <rect key="frame" x="121.66666666666669" y="119" width="132" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bpM-rP-tW5" secondAttribute="height" multiplier="1:1" id="9g3-E2-ECn"/>
-                                    <constraint firstAttribute="width" constant="100" id="DxV-xa-Tk6"/>
-                                    <constraint firstAttribute="height" constant="100" id="Tss-QM-B0y"/>
+                                    <constraint firstAttribute="width" constant="132" id="DxV-xa-Tk6"/>
+                                    <constraint firstAttribute="height" constant="132" id="Tss-QM-B0y"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bpM-rP-tW5" firstAttribute="top" secondItem="SaS-Qu-6Hh" secondAttribute="top" constant="29" id="0m3-Iv-TSZ"/>
-                            <constraint firstItem="bpM-rP-tW5" firstAttribute="leading" secondItem="SaS-Qu-6Hh" secondAttribute="leading" constant="137.5" id="DTY-Eu-hQq"/>
-                            <constraint firstItem="SaS-Qu-6Hh" firstAttribute="trailing" secondItem="bpM-rP-tW5" secondAttribute="trailing" constant="137.5" id="GPn-kZ-ZfN"/>
-                            <constraint firstItem="SaS-Qu-6Hh" firstAttribute="bottom" secondItem="bpM-rP-tW5" secondAttribute="bottom" constant="430" id="Qdf-l6-gTD"/>
+                            <constraint firstItem="bpM-rP-tW5" firstAttribute="top" secondItem="SaS-Qu-6Hh" secondAttribute="top" constant="31" id="DMy-QL-leZ"/>
                             <constraint firstItem="bpM-rP-tW5" firstAttribute="centerX" secondItem="a2q-XB-roW" secondAttribute="centerX" id="z9r-Gt-6mV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SaS-Qu-6Hh"/>

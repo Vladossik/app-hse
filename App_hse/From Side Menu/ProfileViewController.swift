@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyVK
 
 class ProfileViewController: UIViewController {
     
@@ -26,9 +27,9 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
-        self.avatar.clipsToBounds = true
-        
+        showUserPhoto()
+//        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
+//        self.avatar.clipsToBounds = true
     }
     
     // left side menu
@@ -41,5 +42,27 @@ class ProfileViewController: UIViewController {
             
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
+    }
+    
+    private func showUserPhoto() {
+        let session = URLSession(configuration: .default)
+        var dataTask: URLSessionDataTask?
+        
+        dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + VKDelegate.token)!) { [weak self] data, r, error in
+            guard let self = self else { return }
+            
+            if error == nil, let data = data {
+                let response = try? JSONDecoder().decode(ProfileUser.self, from: data)
+                guard let userData = response?.response[0] else { return }
+                
+                DispatchQueue.main.async {
+                    self.avatar.kf.setImage(with: URL(string: userData.photo100))
+                    self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
+                    self.avatar.clipsToBounds = true
+                }
+            }
+        }
+        
+        dataTask?.resume()
     }
 }

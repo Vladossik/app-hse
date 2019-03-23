@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyVK
 
 class SideTableTableViewController: UITableViewController {
     
@@ -23,6 +24,10 @@ class SideTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 && indexPath.row == 0 {
             revealViewController()?.dismiss(animated: true)
+            
+            //logOut
+            VK.sessions.default.logOut()
+            print("SwiftyVK: LogOut")
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
