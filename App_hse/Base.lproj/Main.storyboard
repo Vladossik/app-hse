@@ -516,9 +516,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="h5V-sc-gCO"/>
-                    <connections>
-                        <outlet property="titleNavBar" destination="h5V-sc-gCO" id="o0v-gF-aeG"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1h-ca-wgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

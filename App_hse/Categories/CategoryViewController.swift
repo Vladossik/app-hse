@@ -13,8 +13,15 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var categoryCallection: UICollectionView!
     
-    let categories = [ "Dormitory fee", "Get to university", "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games", "Cleaning", "Complaints"]
-    
+    let categories: [Category] = [Category(name: "Dormitory fee", hashtag: nil),
+                                  Category(name: "Get to university", hashtag: nil),
+                                  Category(name: "Lost things", hashtag: "Lost"),
+                                  Category(name: "Selling", hashtag: "Selling"),
+                                  Category(name: "Free of charge", hashtag: "Freeofcharge"),
+                                  Category(name: "Taxi", hashtag: "Taxi"),
+                                  Category(name: "Board games", hashtag: "Boardgames"),
+                                  Category(name: "Cleaning", hashtag: nil),
+                                  Category(name: "Complaints", hashtag: nil)]
     
     let categoryImages: [UIImage] = [
 
@@ -30,15 +37,13 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         UIImage(named:"complaint")!,
     ]
     
-    var sellectedCell = -1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         categoryCallection.dataSource = self
         categoryCallection.delegate = self
         
-        let layout = self.categoryCallection.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = categoryCallection.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 16)
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 44)/2, height: self.categoryCallection.frame.size.height/3)
         
@@ -57,7 +62,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoryCollectionViewCell
         
-        cell.categoryName.text = categories[indexPath.item]
+        cell.categoryName.text = categories[indexPath.item].name
         cell.categoryImage.image = categoryImages[indexPath.item]
         
         cell.layer.cornerRadius = 10
@@ -66,26 +71,25 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let cell = categoryCallection.cellForItem(at: indexPath)
         cell?.layer.cornerRadius = 10
         cell?.layer.borderColor = Colors.peacockBlue.cgColor
         cell?.layer.borderWidth = 3
         
-        sellectedCell = indexPath.row
-        guard sellectedCell >= 0 else { return }
+        guard indexPath.row >= 0 else { return }
+        let category = categories[indexPath.row]
         
         let bundle = Bundle.main
         let mainStoryboard = UIStoryboard(name: "Main", bundle: bundle)
         
         //дописать!!
-        let category = categories[indexPath.row]
-        switch category {
+        switch category.name {
 //        case "Dormitory fee"
-        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games","Complaints":
+        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games":
             let identifier = "\(PostsViewController.self)"
-            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
-            postsViewController.title = categories[sellectedCell]
+            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as! PostsViewController
+            postsViewController.title = category.name
+            postsViewController.hashtag = category.hashtag
             
             navigationController?.pushViewController(postsViewController, animated: true)
 //        case "Get to university":
@@ -97,7 +101,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         case "Cleaning":
             let identifier = "\(CleaningViewController.self)"
             let cleaningViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
-            cleaningViewController.title = categories[sellectedCell]
+            cleaningViewController.title = category.name
             
             navigationController?.pushViewController(cleaningViewController, animated: true)
         default:

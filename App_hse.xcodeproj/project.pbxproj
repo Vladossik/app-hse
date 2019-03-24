@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860583842247C12E008C0FFA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860583832247C12E008C0FFA /* Category.swift */; };
 		8605E741223846C600F667D4 /* SideTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8605E740223846C600F667D4 /* SideTableTableViewController.swift */; };
 		8628929A21EFA9B2007BA072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628929921EFA9B2007BA072 /* AppDelegate.swift */; };
 		8628929C21EFA9B2007BA072 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628929B21EFA9B2007BA072 /* LoginViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3E758072F2991C01F43B6FA4 /* Pods_App_hse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_hse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860583832247C12E008C0FFA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8605E740223846C600F667D4 /* SideTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTableTableViewController.swift; sourceTree = "<group>"; };
 		8628929621EFA9B2007BA072 /* App_hse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_hse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8628929921EFA9B2007BA072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				862B28C0223D5FF500EAA0AB /* CleaningViewController.swift */,
 				86FB9E2A221DC558006AB18E /* CategoryCollectionViewCell.swift */,
 				869D115C0F46B49D00A22141 /* CategoryViewController.swift */,
+				860583832247C12E008C0FFA /* Category.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				8605E741223846C600F667D4 /* SideTableTableViewController.swift in Sources */,
 				867DE77822032806008C0B26 /* ConstantColors.swift in Sources */,
 				862B28D1223D870100EAA0AB /* Model.xcdatamodeld in Sources */,
+				860583842247C12E008C0FFA /* Category.swift in Sources */,
 				8673081E223D984F00D80A08 /* Post+Save.swift in Sources */,
 				862B28D3223D879900EAA0AB /* CoreDataStack.swift in Sources */,
 				86A6B4E022305B13002DEFF2 /* Extensions.swift in Sources */,

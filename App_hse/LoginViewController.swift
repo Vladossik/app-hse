@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnClickVK(_ sender: Any) {
         
-        VK.sessions.default.logOut()
+//        VK.sessions.default.logOut()
         
         //APIWorker.logout()
         VK.sessions.default.logIn (

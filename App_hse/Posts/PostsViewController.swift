@@ -11,13 +11,12 @@ import Just
 import Kingfisher
 
 class PostsViewController: UITableViewController {
-
-    @IBOutlet weak var titleNavBar: UINavigationItem!
-    
     
     var posts: [Item] = []
     var profiles: [Profile] = []
     var groups: [Group] = []
+    
+    var hashtag: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +29,17 @@ class PostsViewController: UITableViewController {
         let session = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
         
-        dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/wall.get?owner_id=-177771483&fields=first_name,last_name,photo_50&extended=1&v=5.92&access_token=" + VKDelegate.token)!) { data, r, error in
-            if error == nil, let data = data {
-                let response = try? JSONDecoder().decode(Welcome.self, from: data)
-                self.posts = response!.response.items
-                self.profiles = response!.response.profiles
-                self.groups = response!.response.groups
+        let url = URL(string: "https://api.vk.com/method/wall.get?owner_id=-177771483&fields=first_name,last_name,photo_50&extended=1&v=5.92&access_token=" + VKDelegate.token)!
+        
+        dataTask = session.dataTask(with: url) { data, r, error in
+            if error == nil, let data = data, let hashtag = self.hashtag {
+                guard let stringFromData = String(data: data, encoding: .utf8) else { return }
+                let dataFromString = Data(stringFromData.utf8)
+                guard let response = try? JSONDecoder().decode(Welcome.self, from: dataFromString) else { return }
+                
+                self.posts = response.response.items.filter { $0.text.hasPrefix("#\(hashtag)") }
+                self.profiles = response.response.profiles
+                self.groups = response.response.groups
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

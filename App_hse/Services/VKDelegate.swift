@@ -25,7 +25,7 @@ final class VKDelegate: SwiftyVKDelegate {
     public static var user: LogInModel? = nil
 //    let connectionUrl = "https://oauth.vk.com/authorize"
     let connectionUrl = "http://127.0.0.1:9292/"
-    static let token = "39dd70f2b4d9f9b5f1877fe89bd50462a5a4f15044f7334f9bd5704bdfe012894b9db4f4cc355d8ef365a"
+    static let token = "474eed3f7b6b41e6d87417e9dd50cf49843935610da9e2778e4cca3ecb8c69d2b81a2b78cdb0ae01d0597"
     
     
 //    let token = "ee097a26799ae5faa78ed94a5009ce498389b32da2b4779389faaf03f2f06750ac3104717189fcceccead"
