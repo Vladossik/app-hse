@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnClickVK(_ sender: Any) {
         
+        VK.sessions.default.logOut()
+        
         //APIWorker.logout()
         VK.sessions.default.logIn (
             onSuccess: { info in UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: true)

@@ -1035,35 +1035,62 @@ by Vlada Vakulenko</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backfround" translatesAutoresizingMaskIntoConstraints="NO" id="bpM-rP-tW5">
-                                <rect key="frame" x="121.66666666666669" y="119" width="132" height="132"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TjX-wa-3YA">
+                                <rect key="frame" x="16" y="310" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKa-Uc-tAZ">
+                                <rect key="frame" x="16" y="353" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dormitory payment contract number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku5-g9-poS">
+                                <rect key="frame" x="16" y="396" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igN-UU-F20">
+                                <rect key="frame" x="121.66666666666669" y="128" width="132" height="132"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="bpM-rP-tW5" secondAttribute="height" multiplier="1:1" id="9g3-E2-ECn"/>
-                                    <constraint firstAttribute="width" constant="132" id="DxV-xa-Tk6"/>
-                                    <constraint firstAttribute="height" constant="132" id="Tss-QM-B0y"/>
+                                    <constraint firstAttribute="height" constant="132" id="PC4-Ks-B8x"/>
+                                    <constraint firstAttribute="width" constant="132" id="jBj-Lb-W45"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bpM-rP-tW5" firstAttribute="top" secondItem="SaS-Qu-6Hh" secondAttribute="top" constant="31" id="DMy-QL-leZ"/>
-                            <constraint firstItem="bpM-rP-tW5" firstAttribute="centerX" secondItem="a2q-XB-roW" secondAttribute="centerX" id="z9r-Gt-6mV"/>
+                            <constraint firstItem="TjX-wa-3YA" firstAttribute="leading" secondItem="a2q-XB-roW" secondAttribute="leadingMargin" id="2Af-EO-52Q"/>
+                            <constraint firstItem="TjX-wa-3YA" firstAttribute="trailing" secondItem="tKa-Uc-tAZ" secondAttribute="trailing" id="2gu-y0-W1b"/>
+                            <constraint firstItem="TjX-wa-3YA" firstAttribute="top" secondItem="igN-UU-F20" secondAttribute="bottom" constant="50" id="3ZU-vw-tm1"/>
+                            <constraint firstItem="TjX-wa-3YA" firstAttribute="leading" secondItem="tKa-Uc-tAZ" secondAttribute="leading" id="Zj9-sO-oNB"/>
+                            <constraint firstItem="Ku5-g9-poS" firstAttribute="leading" secondItem="tKa-Uc-tAZ" secondAttribute="leading" id="gDV-vH-8MI"/>
+                            <constraint firstItem="igN-UU-F20" firstAttribute="top" secondItem="SaS-Qu-6Hh" secondAttribute="top" constant="40" id="iXW-wf-jmP"/>
+                            <constraint firstItem="tKa-Uc-tAZ" firstAttribute="top" secondItem="TjX-wa-3YA" secondAttribute="bottom" constant="13" id="jGG-PI-fcN"/>
+                            <constraint firstItem="Ku5-g9-poS" firstAttribute="top" secondItem="tKa-Uc-tAZ" secondAttribute="bottom" constant="13" id="lYn-wJ-T2U"/>
+                            <constraint firstItem="Ku5-g9-poS" firstAttribute="trailing" secondItem="tKa-Uc-tAZ" secondAttribute="trailing" id="o4M-D5-MDi"/>
+                            <constraint firstItem="SaS-Qu-6Hh" firstAttribute="trailing" secondItem="TjX-wa-3YA" secondAttribute="trailing" constant="26" id="s1a-DU-Was"/>
+                            <constraint firstItem="igN-UU-F20" firstAttribute="centerX" secondItem="a2q-XB-roW" secondAttribute="centerX" id="ujB-Qj-g7I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SaS-Qu-6Hh"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="zjn-Iq-gHE">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu-icon" id="9Rt-e1-K6i"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="stl-46-1ZR"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="avatar" destination="bpM-rP-tW5" id="YgM-Ei-3DK"/>
+                        <outlet property="avatar" destination="igN-UU-F20" id="Q2Y-8z-w8q"/>
                         <outlet property="menuButton" destination="9Rt-e1-K6i" id="rwl-aq-SXv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUv-r6-4GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="2011"/>
+            <point key="canvasLocation" x="-151.19999999999999" y="2010.5911330049262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a4l-YW-nGj">
@@ -1128,6 +1155,6 @@ by Vlada Vakulenko</string>
         <image name="star" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Z3-rz-SXW"/>
+        <segue reference="Pac-Hn-hCJ"/>
     </inferredMetricsTieBreakers>
 </document>

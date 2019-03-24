@@ -12,7 +12,8 @@ class CleaningViewController: UITableViewController {
 
     @IBAction func phoneCall(_ sender: UIButton) {
         guard
-            let numberPhone = sender.titleLabel?.text, let url = URL(string: "telprompt://\(numberPhone)")
+            let numberPhone = sender.titleLabel?.text,
+            let url = URL(string: "telprompt://\(numberPhone)")
         else { return }
         
         UIApplication.shared.open(url)
