@@ -2,8 +2,8 @@
 //  CoreDataStack.swift
 //  TinkoffChat
 //
-//  Created by Oleg Samoylov on 27/06/2018.
-//  Copyright © 2018 Oleg Samoylov. All rights reserved.
+//  Created by Vladislava on 27/06/2018.
+//  Copyright © 2019 VladislavaVakulenko. All rights reserved.
 //
 
 import CoreData

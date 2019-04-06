@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -454,8 +454,11 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DA3-Gx-0UW">
                                             <rect key="frame" x="93" y="31" width="224" height="34"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tq-h6-1gY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="17.333333333333332"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="999" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tq-h6-1gY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="17.333333333333332"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="EvV-Iz-OQ9"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1147,9 +1150,9 @@ by Vlada Vakulenko</string>
     <resources>
         <image name="Backfround" width="375" height="667"/>
         <image name="LogoHSE" width="700" height="700"/>
-        <image name="clickStar" width="180" height="180"/>
-        <image name="menu-icon" width="30" height="30"/>
-        <image name="star" width="180" height="180"/>
+        <image name="clickStar" width="50" height="50"/>
+        <image name="menu-icon" width="40" height="40"/>
+        <image name="star" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pac-Hn-hCJ"/>

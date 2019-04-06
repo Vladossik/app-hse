@@ -200,10 +200,10 @@
 		86FB9E2C22252A4D006AB18E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				862B28C0223D5FF500EAA0AB /* CleaningViewController.swift */,
 				86FB9E2A221DC558006AB18E /* CategoryCollectionViewCell.swift */,
 				869D115C0F46B49D00A22141 /* CategoryViewController.swift */,
 				860583832247C12E008C0FFA /* Category.swift */,
+				862B28C0223D5FF500EAA0AB /* CleaningViewController.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";

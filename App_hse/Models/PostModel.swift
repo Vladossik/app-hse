@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct Welcome: Codable {
-    let response: Response
-}
-
 struct Response: Codable {
     let count: Int
     let items: [Item]

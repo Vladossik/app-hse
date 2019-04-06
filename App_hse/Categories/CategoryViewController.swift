@@ -18,6 +18,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
                                   Category(name: "Lost things", hashtag: "Lost"),
                                   Category(name: "Selling", hashtag: "Selling"),
                                   Category(name: "Free of charge", hashtag: "Freeofcharge"),
+                                  Category(name: "Promo codes", hashtag: "Freeofcharge"),
                                   Category(name: "Taxi", hashtag: "Taxi"),
                                   Category(name: "Board games", hashtag: "Boardgames"),
                                   Category(name: "Cleaning", hashtag: nil),
@@ -85,11 +86,12 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         //дописать!!
         switch category.name {
 //        case "Dormitory fee"
-        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games":
+        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games","Complaints":
             let identifier = "\(PostsViewController.self)"
             let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as! PostsViewController
             postsViewController.title = category.name
             postsViewController.hashtag = category.hashtag
+            print(postsViewController.posts)
             
             navigationController?.pushViewController(postsViewController, animated: true)
 //        case "Get to university":

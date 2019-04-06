@@ -61,7 +61,9 @@ final class VKDelegate: SwiftyVKDelegate {
         VKDelegate.user = nil
     }
     private func willTokenCreateOrUpdate(info: [String : String]) {
+        return
         
+        // FIXME
         let responce = Just.get(connectionUrl,
 //                                params: [
 //                                    "client_id": "6849870",

@@ -9,6 +9,7 @@
 import UIKit
 import Just
 import Kingfisher
+import SwiftyVK
 
 class PostsViewController: UITableViewController {
     
@@ -23,31 +24,47 @@ class PostsViewController: UITableViewController {
         //tableView.register(UINib(nibName: "PostsCell", bundle: Bundle.main), forCellReuseIdentifier: "PostsCell")
         getPosts()
         
+        self.refreshControl = UIRefreshControl()
+        
+        if let refreshControl = self.refreshControl {
+            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            self.tableView.addSubview(refreshControl)
+        }
     }
     
-    private func getPosts() {
-        let session = URLSession(configuration: .default)
-        var dataTask: URLSessionDataTask?
+    private func getPosts(completion: (() -> Void)? = nil) {
+        let parameters: [Parameter: String] = [
+            .ownerId: "-177771483",
+            .fields: "first_name,last_name,photo_50",
+            .extended: "1"
+        ]
         
-        let url = URL(string: "https://api.vk.com/method/wall.get?owner_id=-177771483&fields=first_name,last_name,photo_50&extended=1&v=5.92&access_token=" + VKDelegate.token)!
-        
-        dataTask = session.dataTask(with: url) { data, r, error in
-            if error == nil, let data = data, let hashtag = self.hashtag {
-                guard let stringFromData = String(data: data, encoding: .utf8) else { return }
-                let dataFromString = Data(stringFromData.utf8)
-                guard let response = try? JSONDecoder().decode(Welcome.self, from: dataFromString) else { return }
-                
-                self.posts = response.response.items.filter { $0.text.hasPrefix("#\(hashtag)") }
-                self.profiles = response.response.profiles
-                self.groups = response.response.groups
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+        VK.API.Wall.get(parameters).onSuccess { [weak self] data in
+            guard
+                let self = self,
+                let response = try? JSONDecoder().decode(Response.self, from: data)
+            else { return }
+            
+            self.posts = response.items.filter {
+                if let hashtag = self.hashtag {
+                    return $0.text.hasPrefix("#\(hashtag)")
+                } else {
+                    return true
                 }
             }
-        }
-        
-        dataTask?.resume()
+            
+            self.profiles = response.profiles
+            self.groups = response.groups
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                completion?()
+            }
+        }.onError({ error in
+            DispatchQueue.main.async {
+                completion?()
+            }
+        }).send()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,11 +91,22 @@ class PostsViewController: UITableViewController {
                 cell.lastNameUser?.text = " "
             }
             
-            cell.textPost.text = post.text
-    
+//            if let indexOfFirstWhiteSpace = post.text.index(of: " ") {
+//                let substring = post.text[indexOfFirstWhiteSpace...]
+//                cell.textPost.text = substring.trimmingCharacters(in: .whitespacesAndNewlines)
+//            } else {
+                cell.textPost.text = post.text
+//            }
+            
             return cell
         } else {
             return PostsCell()
+        }
+    }
+    
+    @objc private func refresh() {
+        if let refreshControl = refreshControl {
+            getPosts(completion: refreshControl.endRefreshing)
         }
     }
 }

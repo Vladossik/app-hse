@@ -20,7 +20,10 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnClickVK(_ sender: Any) {
         
-//        VK.sessions.default.logOut()
+        try? VK.sessions.default.logIn(rawToken: VKDelegate.token,
+                                       expires: TimeInterval.greatestFiniteMagnitude)
+        
+        //VK.sessions.default.logOut()
         
         //APIWorker.logout()
         VK.sessions.default.logIn (

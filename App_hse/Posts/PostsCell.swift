@@ -38,6 +38,11 @@ class PostsCell: UITableViewCell {
         
         avatarUser.layer.cornerRadius = avatarUser.frame.size.width / 2
         avatarUser.clipsToBounds = true
+        textPost.layer.borderColor = Colors.peacockBlue.cgColor
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
     
     func setup(item: Item, profile: Profile) {
