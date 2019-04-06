@@ -82,13 +82,14 @@ class PostsViewController: UITableViewController {
                 cell.avatarUser?.kf.setImage(with: url)
                 cell.setup(item: post, profile: profile)
                 cell.nameUser?.text = profile.firstName
+                cell.lastNameUser.isHidden = false
                 cell.lastNameUser?.text = profile.lastName
             } else if let group = groups.first(where: { -$0.id == post.ownerID }) {
                 let url = URL(string: group.photo50)!
                 cell.avatarUser?.kf.setImage(with: url)
                 cell.setup(item: post, group: group)
                 cell.nameUser?.text = group.name
-                cell.lastNameUser?.text = " "
+                cell.lastNameUser.isHidden = true
             }
             
 //            if let indexOfFirstWhiteSpace = post.text.index(of: " ") {
