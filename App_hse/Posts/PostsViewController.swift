@@ -92,12 +92,10 @@ class PostsViewController: UITableViewController {
                 cell.lastNameUser.isHidden = true
             }
             
-//            if let indexOfFirstWhiteSpace = post.text.index(of: " ") {
-//                let substring = post.text[indexOfFirstWhiteSpace...]
-//                cell.textPost.text = substring.trimmingCharacters(in: .whitespacesAndNewlines)
-//            } else {
-                cell.textPost.text = post.text
-//            }
+            cell.textPost.text = post.text
+                .split(separator: "\n")
+                .filter {!$0.starts(with: "#") && !$0.isEmpty}
+                .joined()
             
             return cell
         } else {
