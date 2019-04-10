@@ -23,55 +23,121 @@ final class VKDelegate: SwiftyVKDelegate {
     
     let scopes: Scopes = [.offline, .photos, .wall, .groups]
     public static var user: LogInModel? = nil
-//    let connectionUrl = "https://oauth.vk.com/authorize"
-    let connectionUrl = "http://127.0.0.1:9292/"
-    static let token = "474eed3f7b6b41e6d87417e9dd50cf49843935610da9e2778e4cca3ecb8c69d2b81a2b78cdb0ae01d0597"
-    
-    
-//    let token = "ee097a26799ae5faa78ed94a5009ce498389b32da2b4779389faaf03f2f06750ac3104717189fcceccead"
-    
+    let connectionUrl = "https://oauth.vk.com/authorize"
+    let clientId = "6849870"
+
     func vkNeedsScopes(for sessionId: String) -> Scopes {
-        // Called when SwiftyVK attempts to get access to user account
-        // Should return a set of permission scopes
         return scopes
     }
     
     func vkNeedToPresent(viewController: VKViewController) {
-        // Called when SwiftyVK wants to present UI (e.g. webView or captcha)
-        // Should display given view controller from current top view controller
         UIApplication.topViewController()?.present(viewController, animated: true)
     }
     
-    func vkTokenCreated(for sessionId: String, info: [String : String]) {
-        // Called when user grants access and SwiftyVK gets new session token
-        // Can be used to run SwiftyVK requests and save session data
-        willTokenCreateOrUpdate(info: info)
-    }
-    
-    func vkTokenUpdated(for sessionId: String, info: [String : String]) {
-        // Called when existing session token has expired and successfully refreshed
-        // You don't need to do anything special here
-        willTokenCreateOrUpdate(info: info)
-    }
+//    func vkTokenCreated(for sessionId: String, info: [String : String]) {
+//        willTokenCreateOrUpdate(info: info)
+//    }
+//
+//    func vkTokenUpdated(for sessionId: String, info: [String : String]) {
+//        willTokenCreateOrUpdate(info: info)
+//    }
     
     func vkTokenRemoved(for sessionId: String) {
-        // Called when user was logged out
-        // Use this method to cancel all SwiftyVK requests and remove session data
         updateDefaults()
         VKDelegate.user = nil
     }
-    private func willTokenCreateOrUpdate(info: [String : String]) {
-        return
-        
-        // FIXME
-        let responce = Just.get(connectionUrl,
+//    private func willTokenCreateOrUpdate(info: [String : String]) {
+//
+//        let responce = Just.get(connectionUrl,
 //                                params: [
 //                                    "client_id": "6849870",
-//                                    "redirect_uri": "https://oauth.vk.com/blank.html"
-//                                    ])
-                                    params: [
-                                        "integration_id":info["user_id"]!,
-                                        "token":info["access_token"]!])
+//                                    "redirect_uri": "https://oauth.vk.com/blank.html",
+//                                    "token": "access_token"])
+//
+//        if(!responce.ok)
+//        {
+//            updateDefaults()
+//            return
+//        }
+//
+//        guard
+//            let data = responce.content,
+//            let loginModel = try? JSONDecoder().decode(LogInModel.self, from: data)
+//            else { return }
+//
+//        updateDefaults(id: info["user_id"]!,
+//                       token: info["access_token"]!,
+//                       authType: "VK",
+//                       name: loginModel.name!,
+//                       avatar: loginModel.avatar ?? "",
+//                       serverID: loginModel.serverID ?? 0)
+//
+//        VKDelegate.user = loginModel
+//    }
+    
+    func vkTokenCreated(for sessionId: String, info: [String : String])  {
+        let responce = Just.get(connectionUrl,
+                                params: [
+                                    "client_id": clientId,
+                                    "redirect_uri": "https://oauth.vk.com/blank.html",
+//                                    "response_type" : "token",
+                                    "token": info["access_token"]!])
+        if(!responce.ok)
+        {
+            updateDefaults()
+            return
+        }
+
+//        let link: String = try! String(contentsOf: responce.url!)
+//        let session = URLSession(configuration: .default)
+//        var dataTask: URLSessionDataTask?
+//
+//        dataTask = session.dataTask(with: URL(string: link) {
+//            [weak self] data, r, error in
+//            guard let self = self else { return }
+//
+//             if error == nil, let data = data {
+//             let response = try? JSONDecoder().decode(ProfileUser.self, from: data)
+//             guard let userData = response?.response[0] else { return }
+//
+//                guard
+//                    let data = responce.content,
+//                    let loginModel = try? JSONDecoder().decode(LogInModel.self, from: data)
+//                    else { return }
+//
+//                updateDefaults(id: info["user_id"]!,
+//                               token: info["access_token"]!,
+//                               authType: "VK",
+//                               name: loginModel.name!,
+//                               avatar: loginModel.avatar ?? "",
+//                               serverID: loginModel.serverID ?? 0)
+//
+//                VKDelegate.user = loginModel
+//        }
+//            },
+//         dataTask?.resume()
+        guard
+            let data = responce.content,
+            let loginModel = try? JSONDecoder().decode(LogInModel.self, from: data)
+            else { return }
+
+        updateDefaults(id: info["user_id"]!,
+                       token: info["access_token"]!,
+                       authType: "VK",
+                       name: loginModel.name!,
+                       avatar: loginModel.avatar ?? "",
+                       serverID: loginModel.serverID ?? 0)
+
+        VKDelegate.user = loginModel
+    }
+    
+    func vkTokenUpdated(for sessionId: String, info: [String : String]) {
+        
+        let responce = Just.get(connectionUrl,
+                                params: [
+                                    "integration_id":info["user_id"]!,
+                                    "token": info["access_token"]!])
+       
         if(!responce.ok)
         {
             updateDefaults()
@@ -92,7 +158,6 @@ final class VKDelegate: SwiftyVKDelegate {
         
         VKDelegate.user = loginModel
     }
-    
     @discardableResult public func silentLogin() -> Bool {
         
         let defaults = UserDefaults.standard
@@ -143,5 +208,13 @@ final class VKDelegate: SwiftyVKDelegate {
         defaults.set(avatar, forKey: defaultsKeys.avatar)
         defaults.set(name, forKey: defaultsKeys.name)
     }
-    
 }
+
+func authorize( success: @escaping ([String : String]) -> (), onError: @escaping (VKError) -> ())
+{
+    VK.sessions.default.logIn(
+        onSuccess: success,
+        onError: onError
+    )
+}
+

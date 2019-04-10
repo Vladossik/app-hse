@@ -17,10 +17,10 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
                                   Category(name: "Get to university", hashtag: nil),
                                   Category(name: "Lost things", hashtag: "Lost"),
                                   Category(name: "Selling", hashtag: "Selling"),
-                                  Category(name: "Free of charge", hashtag: "Freeofcharge"),
-                                  Category(name: "Promo codes", hashtag: "Freeofcharge"),
+                                  Category(name: "Free of charge", hashtag: "FreeOfCharge"),
+                                  Category(name: "Promo codes", hashtag: "PromoCodes"),
                                   Category(name: "Taxi", hashtag: "Taxi"),
-                                  Category(name: "Board games", hashtag: "Boardgames"),
+                                  Category(name: "Board games", hashtag: "BoardGames"),
                                   Category(name: "Cleaning", hashtag: nil),
                                   Category(name: "Complaints", hashtag: nil)]
     

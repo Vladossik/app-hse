@@ -17,6 +17,8 @@ class AboutAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "About"
+        
         sideMenu()
         
         let ver = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String

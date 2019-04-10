@@ -16,8 +16,17 @@ class FavoritesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Favorites"
+        
         sideMenu()
         loadData()
+        
+//        self.refreshControl = UIRefreshControl()
+//
+//        if let refreshControl = self.refreshControl {
+//            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//            self.tableView.addSubview(refreshControl)
+//        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,7 +42,11 @@ class FavoritesViewController: UITableViewController {
             for: indexPath) as? PostsCell {
             let post = posts[indexPath.row]
             cell.avatarUser?.kf.setImage(with: post.avatarURL)
-            cell.textPost?.text = post.text
+            cell.textPost.text = post.text
+                .split(separator: "\n")
+                .filter {!$0.starts(with: "#") && !$0.isEmpty}
+                .joined()
+//            cell.textPost?.text = post.text
             cell.nameUser?.text = post.name
             cell.lastNameUser?.text = post.surname
             cell.clicked = true
@@ -57,6 +70,7 @@ class FavoritesViewController: UITableViewController {
         }
     }
     
+//    private func loadData(completion: (() -> Void)? = nil) {
     private func loadData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.storageManager.fetch { [weak self] posts in
@@ -64,4 +78,10 @@ class FavoritesViewController: UITableViewController {
             self?.tableView.reloadData()
         }
     }
+    
+//    @objc private func refresh() {
+//        if let refreshControl = refreshControl {
+//            loadData(completion: refreshControl.endRefreshing)
+//        }
+//    }
 }

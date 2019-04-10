@@ -27,6 +27,7 @@
 		867DE77422020B7E008C0B26 /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE77322020B7E008C0B26 /* Monaco.ttf */; };
 		867DE7762202FC83008C0B26 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867DE7752202FC83008C0B26 /* Gradient.swift */; };
 		867DE77822032806008C0B26 /* ConstantColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867DE77722032806008C0B26 /* ConstantColors.swift */; };
+		8695A0A0225A6F680088BBFA /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695A09F225A6F680088BBFA /* CreatePostViewController.swift */; };
 		869D115D0F46B49D00A22141 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869D115C0F46B49D00A22141 /* CategoryViewController.swift */; };
 		86A2E850223EBA1F0086829C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2E84F223EBA1F0086829C /* FavoritesViewController.swift */; };
 		86A2E853223FD4EA0086829C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2E852223FD4EA0086829C /* ProfileViewController.swift */; };
@@ -64,6 +65,7 @@
 		867DE77322020B7E008C0B26 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Monaco.ttf; path = ../../fonts/Monaco.ttf; sourceTree = "<group>"; };
 		867DE7752202FC83008C0B26 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		867DE77722032806008C0B26 /* ConstantColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantColors.swift; sourceTree = "<group>"; };
+		8695A09F225A6F680088BBFA /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		869D115C0F46B49D00A22141 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		86A2E84F223EBA1F0086829C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		86A2E852223FD4EA0086829C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8621AE39225D2AB600A256F5 /* GetToUn */ = {
+			isa = PBXGroup;
+			children = (
+				8621AE3B225D2AE000A256F5 /* ModelsRoad */,
+				8621AE3A225D2ACF00A256F5 /* Controllers */,
+			);
+			path = GetToUn;
+			sourceTree = "<group>";
+		};
+		8621AE3A225D2ACF00A256F5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8621AE3B225D2AE000A256F5 /* ModelsRoad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelsRoad;
+			sourceTree = "<group>";
+		};
 		8628928D21EFA9B2007BA072 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +148,7 @@
 		8628929821EFA9B2007BA072 /* App_hse */ = {
 			isa = PBXGroup;
 			children = (
+				8621AE39225D2AB600A256F5 /* GetToUn */,
 				862B28C5223D862800EAA0AB /* CoreData */,
 				86A6B4E122305E9F002DEFF2 /* Models */,
 				86A2E851223EBA250086829C /* Favorites */,
@@ -173,6 +199,7 @@
 		86A2E854223FD4FF0086829C /* From Side Menu */ = {
 			isa = PBXGroup;
 			children = (
+				8695A09F225A6F680088BBFA /* CreatePostViewController.swift */,
 				86A2E852223FD4EA0086829C /* ProfileViewController.swift */,
 				86A2E8552240E44E0086829C /* AboutAppViewController.swift */,
 			);
@@ -386,6 +413,7 @@
 				8628929A21EFA9B2007BA072 /* AppDelegate.swift in Sources */,
 				867DE7762202FC83008C0B26 /* Gradient.swift in Sources */,
 				862B28C1223D5FF500EAA0AB /* CleaningViewController.swift in Sources */,
+				8695A0A0225A6F680088BBFA /* CreatePostViewController.swift in Sources */,
 				86A6B4E322305EF7002DEFF2 /* LogInModel.swift in Sources */,
 				8605E741223846C600F667D4 /* SideTableTableViewController.swift in Sources */,
 				867DE77822032806008C0B26 /* ConstantColors.swift in Sources */,

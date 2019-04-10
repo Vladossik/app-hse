@@ -16,7 +16,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Profile"
+        
         sideMenu()
         
 //        avatar.layer.cornerRadius = avatar.frame.size.width / 2
@@ -47,8 +49,10 @@ class ProfileViewController: UIViewController {
     private func showUserPhoto() {
         let session = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
+        let token = UserDefaults.standard.string(forKey: defaultsKeys.token)!
         
-        dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + VKDelegate.token)!) { [weak self] data, r, error in
+        //UserDefaults.token)
+        dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + token)!) { [weak self] data, r, error in
             guard let self = self else { return }
             
             if error == nil, let data = data {

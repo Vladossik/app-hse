@@ -17,20 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var storageManager = StorageManager(coreDataStack: CoreDataStack(resourceName: "Model"))
 
-
+    @available(iOS 9.0, *)
+    private func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let app = options[.sourceApplication] as? String
+        VK.handle(url: url, sourceApplication: app)
+        return true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //vkDelegateReference = VKDelegate()
         //(vkDelegateReference as! VKDelegate).vkTokenRemoved(for: "")
-        
+
 //        let defaults = UserDefaults.standard
 //        if let token = defaults.string(forKey: defaultsKeys.token), !token.isEmpty {
 //            skipLogin()
 //            return true
 //        }v
-        
+
         vkDelegateReference = VKDelegate()
         VK.setUp(appId: "6849870", delegate: vkDelegateReference!)
         (vkDelegateReference as! VKDelegate).silentLogin()
+        return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        VK.handle(url: url, sourceApplication: sourceApplication)
         return true
     }
 
@@ -63,5 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UIStoryboard(name: "Main", bundle: bundle).instantiateViewController(withIdentifier: "SWRevealViewController")
         window?.makeKeyAndVisible()
     }
+    
+    
 }
 

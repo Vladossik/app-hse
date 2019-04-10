@@ -9,9 +9,9 @@
 import Foundation
 
 class LogInModel: Codable {
-    
+
     let serverID: Int64?
     let avatar: String?
     let name: String?
-    
+
 }
