@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Profile"
+         self.navigationItem.title = "Profile"
         
         sideMenu()
         

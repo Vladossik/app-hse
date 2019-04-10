@@ -16,7 +16,7 @@ class FavoritesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Favorites"
+         self.navigationItem.title = "Favorites"
         
         sideMenu()
         loadData()

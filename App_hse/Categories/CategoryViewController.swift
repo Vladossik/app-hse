@@ -40,6 +40,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Services"
 
         categoryCallection.dataSource = self
         categoryCallection.delegate = self
