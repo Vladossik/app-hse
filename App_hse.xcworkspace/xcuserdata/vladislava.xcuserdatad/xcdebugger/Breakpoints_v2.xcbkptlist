@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_hse/From Side Menu/CreatePostViewController.swift"
+            timestampString = "576716343.301564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "buttonPost(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_hse/From Side Menu/CreatePostViewController.swift"
+            timestampString = "576716343.3022929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "buttonPost(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "App_hse.CreatePostViewController.buttonPost(Any) -&gt; ()"
+                  moduleName = "App_hse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislava/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/App_hse/App_hse/From%20Side%20Menu/CreatePostViewController.swift"
+                  timestampString = "576716293.679347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "5376">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (SwiftyVK.VKError) -&gt; () in App_hse.CreatePostViewController.buttonPost(Any) -&gt; ()"
+                  moduleName = "App_hse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislava/Desktop/%D0%BA%D1%83%D1%80%D1%81%D0%B0%D1%87/App_hse/App_hse/From%20Side%20Menu/CreatePostViewController.swift"
+                  timestampString = "576716293.6815799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
