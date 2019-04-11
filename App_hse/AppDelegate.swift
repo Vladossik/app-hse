@@ -29,14 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //(vkDelegateReference as! VKDelegate).vkTokenRemoved(for: "")
 
 //        let defaults = UserDefaults.standard
-//        if let token = defaults.string(forKey: defaultsKeys.token), !token.isEmpty {
+//        if let token = defaults.string(forKey: DefaultsKeys.token), !token.isEmpty {
 //            skipLogin()
 //            return true
 //        }v
 
         vkDelegateReference = VKDelegate()
         VK.setUp(appId: "6849870", delegate: vkDelegateReference!)
-        (vkDelegateReference as! VKDelegate).silentLogin()
+        //(vkDelegateReference as! VKDelegate).silentLogin()
         return true
     }
     

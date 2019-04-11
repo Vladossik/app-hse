@@ -97,8 +97,8 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             navigationController?.pushViewController(postsViewController, animated: true)
 //        case "Get to university":
-//            let identifier = "\(PostsViewController.self)"
-//            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
+//            let identifier = "\(GetFirstTableViewController.self)"
+//            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as GetFirstTableViewController
 //            postsViewController.title = categories[sellectedCell]
 //
 //            navigationController?.pushViewController(postsViewController, animated: true)

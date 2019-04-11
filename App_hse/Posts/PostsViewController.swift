@@ -40,10 +40,16 @@ class PostsViewController: UITableViewController {
         ]
         
         VK.API.Wall.get(parameters).onSuccess { [weak self] data in
-            guard
-                let self = self,
-                let response = try? JSONDecoder().decode(Response.self, from: data)
-            else { return }
+            guard let self = self else { return }
+            
+            let response: Response
+            
+            do {
+                response = try JSONDecoder().decode(Response.self, from: data)
+            } catch {
+                print(error)
+                return
+            }
             
             self.posts = response.items.filter {
                 if let hashtag = self.hashtag {

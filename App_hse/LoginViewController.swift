@@ -19,29 +19,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var buttonLogIn: UIButton!
     
     @IBAction func btnClickVK(_ sender: Any) {
-        
-//        try? VK.sessions.default.logIn(rawToken: VKDelegate.token,
-//                                       expires: TimeInterval.greatestFiniteMagnitude)
-//
-//        //VK.sessions.default.logOut()
-//
-//        //APIWorker.logout()
-//        VK.sessions.default.logIn (
-//            onSuccess: { info in UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: true)
-//        },
-//            onError: { _ in /*error in let alert = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-//                                self.present(alert, animated: true, completion: nil)*/
-//                DispatchQueue.main.async {
-//                    UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: true)
-//                }
-//        })
-        
-        VK.sessions.default.logOut()
-        print("SwiftyVK: LogOut")
         authorize(success: { info in
-            DispatchQueue.main.async {
-                UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: true)}
+            DispatchQueue.main.async { UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: true)
+                }
             },
                   onError: {error in
                     let alert = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
@@ -66,10 +46,23 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.string(forKey: defaultsKeys.authType)=="VK"
-        {
-            UIApplication.shared.keyWindow!.rootViewController!.present(self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController, animated: false)
-        }
+        let defaults = UserDefaults.standard
+        
+        guard
+            defaults.string(forKey: DefaultsKeys.accessToken) != nil,
+            defaults.string(forKey: DefaultsKeys.userId) != nil
+        else { return }
+        
+        let storyboardID = "SWRevealViewController"
+        
+        guard
+            let rootViewController = UIApplication.shared.keyWindow?.rootViewController,
+            let storyboard = storyboard,
+            let revealViewController = storyboard.instantiateViewController(withIdentifier:
+                storyboardID) as? SWRevealViewController
+        else { return }
+        
+        rootViewController.present(revealViewController, animated: false)
     }
 }
 

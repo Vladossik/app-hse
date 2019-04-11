@@ -18,15 +18,17 @@ class FavoritesViewController: UITableViewController {
         
          self.navigationItem.title = "Favorites"
         
+         self.refreshControl = UIRefreshControl()
+        
+         if let refreshControl = self.refreshControl {
+            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+            self.tableView.addSubview(refreshControl)
+        }
+        
         sideMenu()
         loadData()
         
-//        self.refreshControl = UIRefreshControl()
-//
-//        if let refreshControl = self.refreshControl {
-//            refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//            self.tableView.addSubview(refreshControl)
-//        }
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,18 +72,23 @@ class FavoritesViewController: UITableViewController {
         }
     }
     
-//    private func loadData(completion: (() -> Void)? = nil) {
-    private func loadData() {
+      private func loadData(completion: (() -> Void)? = nil) {
+//    private func loadData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.storageManager.fetch { [weak self] posts in
             self?.posts = posts
             self?.tableView.reloadData()
         }
+        
+        DispatchQueue.main.async {
+            completion?()
+            self.refreshControl?.endRefreshing()
+        }
     }
     
-//    @objc private func refresh() {
-//        if let refreshControl = refreshControl {
-//            loadData(completion: refreshControl.endRefreshing)
-//        }
-//    }
+    @objc private func refresh() {
+        if let refreshControl = refreshControl {
+            loadData(completion: refreshControl.endRefreshing)
+        }
+    }
 }

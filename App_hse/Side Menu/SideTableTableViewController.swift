@@ -23,21 +23,16 @@ class SideTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 && indexPath.row == 0 {
-            revealViewController()?.dismiss(animated: true)
-            
-            //logOut
-            VK.sessions.default.logOut()
-            print("SwiftyVK: LogOut")
+            logOut()
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     private func showUserInfo() {
-        
         let session = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
-        let token = UserDefaults.standard.string(forKey: defaultsKeys.token)!
+        let token = UserDefaults.standard.string(forKey: DefaultsKeys.accessToken)!
         
         dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + token)!) { [weak self] data, r, error in
             guard let self = self else { return }
@@ -47,7 +42,6 @@ class SideTableTableViewController: UITableViewController {
                 guard let userData = response?.response[0] else { return }
                 
                 DispatchQueue.main.async {
-                    
                     self.avatarUser.kf.setImage(with: URL(string: userData.photo100))
                     self.avatarUser.layer.cornerRadius = self.avatarUser.frame.size.width / 2
                     self.avatarUser.clipsToBounds = true
@@ -61,4 +55,8 @@ class SideTableTableViewController: UITableViewController {
         dataTask?.resume()
     }
     
+    private func logOut() {
+        revealViewController()?.dismiss(animated: true)
+        VK.sessions.default.logOut()
+    }
 }

@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
          self.navigationItem.title = "Profile"
         
         sideMenu()
+        showUserPhoto()
         
 //        avatar.layer.cornerRadius = avatar.frame.size.width / 2
 //        avatar.clipsToBounds = true
@@ -29,7 +30,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        showUserPhoto()
+        
 //        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
 //        self.avatar.clipsToBounds = true
     }
@@ -47,18 +48,19 @@ class ProfileViewController: UIViewController {
     }
     
     private func showUserPhoto() {
+     
         let session = URLSession(configuration: .default)
         var dataTask: URLSessionDataTask?
-        let token = UserDefaults.standard.string(forKey: defaultsKeys.token)!
-        
+        let token = UserDefaults.standard.string(forKey: DefaultsKeys.accessToken)!
+
         //UserDefaults.token)
         dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + token)!) { [weak self] data, r, error in
             guard let self = self else { return }
-            
+
             if error == nil, let data = data {
                 let response = try? JSONDecoder().decode(ProfileUser.self, from: data)
                 guard let userData = response?.response[0] else { return }
-                
+
                 DispatchQueue.main.async {
                     self.avatar.kf.setImage(with: URL(string: userData.photo100))
                     self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
@@ -66,7 +68,7 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-        
+
         dataTask?.resume()
     }
 }

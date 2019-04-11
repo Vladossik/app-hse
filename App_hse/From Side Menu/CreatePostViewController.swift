@@ -41,7 +41,19 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
         
         VK.API.Wall.post(parameters)
             .configure(with: Config(httpMethod: .POST))
-            .onSuccess {response in print(response)}
+            .onSuccess {response in
+                //fix
+                let showAlert = UIAlertController(title: "Done!", message: "Your post on the wall", preferredStyle: UIAlertController.Style.alert)
+                let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 50, height: 50))
+                imageView.image = #imageLiteral(resourceName: "success")
+                showAlert.view.addSubview(imageView)
+                let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)
+                let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+                showAlert.view.addConstraint(height)
+                showAlert.view.addConstraint(width)
+                showAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(showAlert, animated: true, completion: nil)
+                print(response)}
             .onError ({ error in print(error)})
             .send()
         

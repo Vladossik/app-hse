@@ -66,7 +66,6 @@ struct Item: Codable {
     let comments: Comments
     let likes: Likes
     let reposts: Reposts
-    let views: Views
     let isFavorite: Bool
     
     enum CodingKeys: String, CodingKey {
@@ -83,7 +82,7 @@ struct Item: Codable {
         case canDelete = "can_delete"
         case canPin = "can_pin"
         case postSource = "post_source"
-        case comments, likes, reposts, views
+        case comments, likes, reposts
         case isFavorite = "is_favorite"
     }
 }
@@ -123,10 +122,6 @@ struct Reposts: Codable {
         case count
         case userReposted = "user_reposted"
     }
-}
-
-struct Views: Codable {
-    let count: Int
 }
 
 struct Profile: Codable {
