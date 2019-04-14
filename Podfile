@@ -8,4 +8,5 @@ target 'App_hse' do
   pod 'SwiftyVK'
   pod 'Just'
   pod 'Kingfisher'
+  pod 'SwiftyJSON', '~> 4.0'
 end

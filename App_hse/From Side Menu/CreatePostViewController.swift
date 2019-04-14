@@ -45,11 +45,11 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
                 DispatchQueue.main.async {
                     //fix
                     let showAlert = UIAlertController(title: "Done!", message: "Your post on the wall", preferredStyle: UIAlertController.Style.alert)
-                    let imageView = UIImageView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
+                    let imageView = UIImageView(frame: CGRect(x: 110, y: 80, width: 50, height: 50))
                     imageView.image = #imageLiteral(resourceName: "success")
                     showAlert.view.addSubview(imageView)
-                    let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)
-                    let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+                    let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 180)
+                    let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 260)
                     showAlert.view.addConstraint(height)
                     showAlert.view.addConstraint(width)
                     showAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

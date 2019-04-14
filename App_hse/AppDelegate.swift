@@ -25,18 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //vkDelegateReference = VKDelegate()
-        //(vkDelegateReference as! VKDelegate).vkTokenRemoved(for: "")
-
-//        let defaults = UserDefaults.standard
-//        if let token = defaults.string(forKey: DefaultsKeys.token), !token.isEmpty {
-//            skipLogin()
-//            return true
-//        }v
-
+       
         vkDelegateReference = VKDelegate()
         VK.setUp(appId: "6849870", delegate: vkDelegateReference!)
         //(vkDelegateReference as! VKDelegate).silentLogin()
+        
+        // Set application version into Settings.bundle
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+        let versionString = String(format: "%@ (%@)", version, build)
+        
+        let userDefaults = UserDefaults.standard
+        //print(userDefaults.stringForKey("version"))
+        userDefaults.set(versionString, forKey: "version")
+        userDefaults.synchronize()
         return true
     }
     
