@@ -12,27 +12,28 @@ class CampusPickerViewController: UITableViewController {
 
     let campuses = RouteDataModel.sharedInstance.campuses
     
-    var selectedCampusIndex: Int?
+    var selectedCampusIndex: Int!
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "SaveSelectedCampus" {
-            if let cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPath(for: cell)
-                selectedCampusIndex = indexPath?.row
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//        if segue.identifier == "SaveSelectedCampus" {
+//            if let cell = sender as? UITableViewCell {
+//                let indexPath = tableView.indexPath(for: cell)
+//                selectedCampusIndex = indexPath?.row
+//            }
+//        }
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //Other row is selected - need to deselect it
-        if let index = selectedCampusIndex {
-            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
-            cell?.accessoryType = .none
-        }
+//        //Other row is selected - need to deselect it
+//        if let index = selectedCampusIndex {
+//            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
+//            cell?.accessoryType = .none
+//        }
         
         //selectedCampus = campuses![indexPath.row] as? Dictionary<String, AnyObject>
         selectedCampusIndex = indexPath.row
@@ -51,6 +52,7 @@ class CampusPickerViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CampusCell", for: indexPath)
         
         let campus = campuses![indexPath.row + 1]

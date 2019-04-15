@@ -96,12 +96,12 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             print(postsViewController.posts)
             
             navigationController?.pushViewController(postsViewController, animated: true)
-//        case "Get to university":
-//            let identifier = "\(GetFirstTableViewController.self)"
-//            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as GetFirstTableViewController
-//            postsViewController.title = categories[sellectedCell]
-//
-//            navigationController?.pushViewController(postsViewController, animated: true)
+        case "Get to university":
+            let identifier = "\(GetFirstTableViewController.self)"
+            let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as! GetFirstTableViewController
+            postsViewController.title = category.name
+
+            navigationController?.pushViewController(postsViewController, animated: true)
         case "Cleaning":
             let identifier = "\(CleaningViewController.self)"
             let cleaningViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
