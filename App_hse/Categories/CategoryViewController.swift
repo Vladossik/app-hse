@@ -88,7 +88,7 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         //дописать!!
         switch category.name {
 //        case "Dormitory fee"
-        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games","Complaints":
+        case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games":
             let identifier = "\(PostsViewController.self)"
             let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as! PostsViewController
             postsViewController.title = category.name
@@ -104,6 +104,12 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             navigationController?.pushViewController(postsViewController, animated: true)
         case "Cleaning":
             let identifier = "\(CleaningViewController.self)"
+            let cleaningViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
+            cleaningViewController.title = category.name
+            
+            navigationController?.pushViewController(cleaningViewController, animated: true)
+        case "Complaints":
+            let identifier = "\(SendEmailViewController.self)"
             let cleaningViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier)
             cleaningViewController.title = category.name
             

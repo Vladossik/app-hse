@@ -26,6 +26,8 @@
 		862B28D3223D879900EAA0AB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B28D2223D879900EAA0AB /* CoreDataStack.swift */; };
 		862B28D5223D8B8300EAA0AB /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862B28D4223D8B8300EAA0AB /* StorageManager.swift */; };
 		862C159C22344A9E00299C53 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862C159B22344A9E00299C53 /* PostModel.swift */; };
+		8651723522665195001FBA06 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8651723422665195001FBA06 /* SendEmailViewController.swift */; };
+		8651723722665BD4001FBA06 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8651723622665BD4001FBA06 /* MessageUI.framework */; };
 		8673081E223D984F00D80A08 /* Post+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673081D223D984F00D80A08 /* Post+Save.swift */; };
 		867DE7702201FA68008C0B26 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */; };
 		867DE77222020218008C0B26 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE77122020218008C0B26 /* Montserrat-Medium.ttf */; };
@@ -78,6 +80,8 @@
 		862B28D2223D879900EAA0AB /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		862B28D4223D8B8300EAA0AB /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		862C159B22344A9E00299C53 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		8651723422665195001FBA06 /* SendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SendEmailViewController.swift; path = ../GetToUn/Controllers/SendEmailViewController.swift; sourceTree = "<group>"; };
+		8651723622665BD4001FBA06 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8673081D223D984F00D80A08 /* Post+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Save.swift"; sourceTree = "<group>"; };
 		867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		867DE77122020218008C0B26 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8651723722665BD4001FBA06 /* MessageUI.framework in Frameworks */,
 				A982754FB97FC6F611B24D92 /* Pods_App_hse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +280,7 @@
 				869D115C0F46B49D00A22141 /* CategoryViewController.swift */,
 				860583832247C12E008C0FFA /* Category.swift */,
 				862B28C0223D5FF500EAA0AB /* CleaningViewController.swift */,
+				8651723422665195001FBA06 /* SendEmailViewController.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 		ECF8AF73EE97468AC8DD9AE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8651723622665BD4001FBA06 /* MessageUI.framework */,
 				3E758072F2991C01F43B6FA4 /* Pods_App_hse.framework */,
 			);
 			name = Frameworks;
@@ -456,6 +463,7 @@
 				86A2E8562240E44E0086829C /* AboutAppViewController.swift in Sources */,
 				8621AE4B225FE2D200A256F5 /* Date.swift in Sources */,
 				8629FC5E2232F8ED00C55F86 /* PostsViewController.swift in Sources */,
+				8651723522665195001FBA06 /* SendEmailViewController.swift in Sources */,
 				8629FC612232F94E00C55F86 /* PostsCell.swift in Sources */,
 				8628929C21EFA9B2007BA072 /* LoginViewController.swift in Sources */,
 				862B28D5223D8B8300EAA0AB /* StorageManager.swift in Sources */,
@@ -632,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GD7JFQT486;
 				INFOPLIST_FILE = App_hse/Info.plist;
@@ -641,6 +650,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VAKULENKO.App-hse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "App_hse/Side Menu/App_hse-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -654,6 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GD7JFQT486;
 				INFOPLIST_FILE = App_hse/Info.plist;
@@ -663,6 +674,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.VAKULENKO.App-hse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "App_hse/Side Menu/App_hse-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
