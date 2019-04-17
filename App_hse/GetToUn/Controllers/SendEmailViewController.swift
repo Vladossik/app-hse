@@ -22,6 +22,7 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
             showMailError()
         }
     }
+    
     func configureMailController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -43,12 +44,6 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
-
-//        UIApplication.shared.keyWindow?.rootViewController?.present(composer, animated: true)
-//        self.navigationController?.present(composer, animated: true, completion: nil)
-//        //UIApplication.shared.keyWindow?.rootViewController?.present(composer, animated: true)
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

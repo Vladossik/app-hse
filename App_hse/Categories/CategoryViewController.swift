@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyVK
 
+var disclaimerHasBeenDisplayed = false
+
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -39,19 +41,27 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         UIImage(named:"complaint")!,
     ]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let alert = UIAlertController(title: "Are you subscribed to a group?", message: "if not then we will sign you.", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
-            self.addGroup()
-        }))
-        self.present(alert, animated: true, completion: nil)
+        let AlertOnce = UserDefaults.standard
+        if(!AlertOnce.bool(forKey: "oneTimeAlert")){
+            let alert = UIAlertController(title: "Are you subscribed to a group?", message: "if not then we will sign you.", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+                AlertOnce.set(true , forKey: "oneTimeAlert")
+                AlertOnce.synchronize()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+                self.addGroup()
+                AlertOnce.set(true , forKey: "oneTimeAlert")
+                AlertOnce.synchronize()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         
         self.navigationItem.title = "Services"
 

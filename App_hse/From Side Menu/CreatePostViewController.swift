@@ -77,6 +77,8 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
         
         category.inputView = picker
         
+        self.hideKeyboardWhenTappedAround()
+        
         sideMenu()
     }
     
@@ -110,5 +112,17 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         category.text = hashtags[row]
         self.view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
