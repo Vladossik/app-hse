@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "App_hse/From Side Menu/CreatePostViewController.swift"
-            timestampString = "577128976.419251"
+            timestampString = "577196963.630105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "App_hse/From Side Menu/CreatePostViewController.swift"
-            timestampString = "577128976.419415"
+            timestampString = "577196963.630284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "buttonPost(_:)"
             landmarkType = "7">
             <Locations>

@@ -21,7 +21,8 @@ class PostsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.register(UINib(nibName: "PostsCell", bundle: Bundle.main), forCellReuseIdentifier: "PostsCell")
+        //tableView.register(UINib(nibName: "PostsCell", bundle: Bundle.main), forCellReuseIdentifier: "Posts
+        
         getPosts()
         
         self.refreshControl = UIRefreshControl()
@@ -73,15 +74,35 @@ class PostsViewController: UITableViewController {
         }).send()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.posts.count
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+//        headerView.backgroundColor = UIColor.clear
+       headerView.backgroundColor = Colors.veryLightPink
+        return headerView
+    }
+
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return posts.count
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //достать ячейку из кеша
         if let cell = tableView.dequeueReusableCell(
-            withIdentifier: "PostsCell", for: indexPath) as? PostsCell {
-            let post = posts[indexPath.row]
+            withIdentifier: "PostsCell") as? PostsCell {
+            let post = posts[indexPath.section]
             
             if let profile = profiles.first(where: { $0.id == post.signerID }) {
                 let url = URL(string: profile.photo50)!
@@ -103,11 +124,53 @@ class PostsViewController: UITableViewController {
                 .filter {!$0.starts(with: "#") && !$0.isEmpty}
                 .joined()
             
+            
+            cell.backgroundColor = UIColor.white
+            cell.layer.borderWidth = 0.1
+            cell.layer.cornerRadius = 9
+            cell.clipsToBounds = true
+           
+            // fix
+            cell.layer.frame = cell.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
+           
             return cell
         } else {
             return PostsCell()
         }
     }
+    
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        //достать ячейку из кеша
+//        if let cell = tableView.dequeueReusableCell(
+//            withIdentifier: "PostsCell", for: indexPath) as? PostsCell {
+//            let post = posts[indexPath.row]
+//
+//            if let profile = profiles.first(where: { $0.id == post.signerID }) {
+//                let url = URL(string: profile.photo50)!
+//                cell.avatarUser?.kf.setImage(with: url)
+//                cell.setup(item: post, profile: profile)
+//                cell.nameUser?.text = profile.firstName
+//                cell.lastNameUser.isHidden = false
+//                cell.lastNameUser?.text = profile.lastName
+//            } else if let group = groups.first(where: { -$0.id == post.ownerID }) {
+//                let url = URL(string: group.photo50)!
+//                cell.avatarUser?.kf.setImage(with: url)
+//                cell.setup(item: post, group: group)
+//                cell.nameUser?.text = group.name
+//                cell.lastNameUser.isHidden = true
+//            }
+//
+//            cell.textPost.text = post.text
+//                .split(separator: "\n")
+//                .filter {!$0.starts(with: "#") && !$0.isEmpty}
+//                .joined()
+//
+//            return cell
+//        } else {
+//            return PostsCell()
+//        }
+//    }
     
     @objc private func refresh() {
         if let refreshControl = refreshControl {

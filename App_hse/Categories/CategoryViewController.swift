@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyVK
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -41,6 +42,17 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let alert = UIAlertController(title: "Are you subscribed to a group?", message: "if not then we will sign you.", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+            self.addGroup()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
         self.navigationItem.title = "Services"
 
         categoryCallection.dataSource = self
@@ -51,6 +63,17 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 44)/2, height: self.categoryCallection.frame.size.height/3)
         
         sideMenu()
+    }
+    
+    func addGroup(completion: (() -> Void)? = nil) {
+        let parameters: [Parameter: String] = [
+            .groupId : "177771483"
+        ]
+        
+        VK.API.Groups.join(parameters)
+            .onSuccess({data in print(data)})
+            .onError ({ error in print(error)})
+            .send()
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,5 +161,11 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+//    func createAlert(title: String, message: String) {
+//
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>))
+//    }
     
 }

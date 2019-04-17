@@ -43,7 +43,6 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
             .configure(with: Config(httpMethod: .POST))
             .onSuccess {response in
                 DispatchQueue.main.async {
-                    //fix
                     let showAlert = UIAlertController(title: "Done!", message: "Your post on the wall", preferredStyle: UIAlertController.Style.alert)
                     let imageView = UIImageView(frame: CGRect(x: 110, y: 80, width: 50, height: 50))
                     imageView.image = #imageLiteral(resourceName: "success")
