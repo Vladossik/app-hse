@@ -11,6 +11,7 @@ import MessageUI
 
 class SendEmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
+    @IBOutlet weak var sendEmail: UIButton!
     @IBAction func sendEmail(_ sender: UIButton) {
        
         let mailComposeViewController = configureMailController()
@@ -47,6 +48,9 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendEmail.layer.borderColor = UIColor.lightGray.cgColor
+        sendEmail.layer.cornerRadius = 10.0
+        sendEmail.layer.borderWidth = 0.5
     }
 
 }

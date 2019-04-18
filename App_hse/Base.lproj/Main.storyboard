@@ -115,57 +115,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-VN-TgI">
-                                <rect key="frame" x="16" y="118" width="343" height="30"/>
+                                <rect key="frame" x="30" y="118" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="..." translatesAutoresizingMaskIntoConstraints="NO" id="6oK-1r-t9h">
-                                <rect key="frame" x="16" y="156" width="343" height="303"/>
+                                <rect key="frame" x="30" y="156" width="315" height="303"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0039215686269999999" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="303" id="0Xm-yQ-Syd"/>
+                                </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES" lookupSuggestion="YES"/>
                             </textView>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5H-vS-eVM">
-                                <rect key="frame" x="16" y="562" width="343" height="216"/>
+                                <rect key="frame" x="14" y="562" width="361" height="216"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bud-ud-eOc">
-                                <rect key="frame" x="16" y="469" width="343" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bud-ud-eOc">
+                                <rect key="frame" x="30" y="509" width="315" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="hit-2i-Hxv"/>
+                                    <constraint firstAttribute="height" constant="45" id="zA5-w8-Cf4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                 <state key="normal" title="Post">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPost:" destination="jXX-0B-ZdC" eventType="touchUpInside" id="dCw-Xh-wQX"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lBW-VN-TgI" firstAttribute="leading" secondItem="02L-1W-bpk" secondAttribute="leadingMargin" id="3jg-Xe-6XT"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="7id-fR-thI"/>
-                            <constraint firstItem="Bud-ud-eOc" firstAttribute="trailing" secondItem="C5H-vS-eVM" secondAttribute="trailing" id="Fil-Gp-Aub"/>
+                            <constraint firstItem="lBW-VN-TgI" firstAttribute="leading" secondItem="MHN-0f-brn" secondAttribute="leading" constant="30" id="9kd-x2-nsf"/>
+                            <constraint firstItem="6oK-1r-t9h" firstAttribute="trailing" secondItem="Bud-ud-eOc" secondAttribute="trailing" id="HJL-3r-cfj"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="top" secondItem="MHN-0f-brn" secondAttribute="top" constant="30" id="J4V-uq-iVa"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="leading" secondItem="6oK-1r-t9h" secondAttribute="leading" id="LfV-NC-1iS"/>
+                            <constraint firstItem="MHN-0f-brn" firstAttribute="trailing" secondItem="Bud-ud-eOc" secondAttribute="trailing" constant="30" id="MBN-g5-IwF"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="Vc5-q7-Rp4"/>
+                            <constraint firstItem="Bud-ud-eOc" firstAttribute="leading" secondItem="MHN-0f-brn" secondAttribute="leading" constant="30" id="YmM-Kz-Az4"/>
                             <constraint firstItem="C5H-vS-eVM" firstAttribute="bottom" secondItem="MHN-0f-brn" secondAttribute="bottom" id="bZR-Rd-wRL"/>
-                            <constraint firstItem="C5H-vS-eVM" firstAttribute="leading" secondItem="6oK-1r-t9h" secondAttribute="leading" id="c6k-Fx-tRP"/>
-                            <constraint firstItem="Bud-ud-eOc" firstAttribute="leading" secondItem="C5H-vS-eVM" secondAttribute="leading" id="eUv-Wy-2XI"/>
+                            <constraint firstItem="C5H-vS-eVM" firstAttribute="leading" secondItem="6oK-1r-t9h" secondAttribute="leading" constant="-16" id="c6k-Fx-tRP"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="ezW-kZ-Id0"/>
-                            <constraint firstItem="Bud-ud-eOc" firstAttribute="top" secondItem="6oK-1r-t9h" secondAttribute="bottom" constant="10" id="fvh-kD-kmv"/>
+                            <constraint firstItem="MHN-0f-brn" firstAttribute="trailing" secondItem="lBW-VN-TgI" secondAttribute="trailing" constant="30" id="gD4-1C-kn2"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="gJO-4h-KuB"/>
-                            <constraint firstItem="C5H-vS-eVM" firstAttribute="top" secondItem="Bud-ud-eOc" secondAttribute="bottom" constant="39" id="kRd-1p-dwM"/>
-                            <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="02L-1W-bpk" secondAttribute="trailingMargin" id="lNb-fL-ba1"/>
-                            <constraint firstItem="C5H-vS-eVM" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="lcw-g8-evh"/>
+                            <constraint firstItem="C5H-vS-eVM" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" constant="30" id="lcw-g8-evh"/>
                             <constraint firstItem="6oK-1r-t9h" firstAttribute="top" secondItem="lBW-VN-TgI" secondAttribute="bottom" constant="8" symbolic="YES" id="mIM-zc-qor"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="leading" secondItem="6oK-1r-t9h" secondAttribute="leading" id="nfL-Lr-lRY"/>
                             <constraint firstItem="lBW-VN-TgI" firstAttribute="trailing" secondItem="6oK-1r-t9h" secondAttribute="trailing" id="qeU-iC-2h6"/>
+                            <constraint firstItem="Bud-ud-eOc" firstAttribute="top" secondItem="6oK-1r-t9h" secondAttribute="bottom" constant="50" id="tOX-Zh-g6c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHN-0f-brn"/>
                     </view>
@@ -661,7 +665,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="3Ap-dt-zGO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -727,8 +731,8 @@
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-j9-O0Q">
                                                     <rect key="frame" x="16" y="7" width="343" height="28"/>
                                                     <segments>
-                                                        <segment title="from Trefoil"/>
-                                                        <segment title="to Trefoil"/>
+                                                        <segment title="from Dorm"/>
+                                                        <segment title="to Dorm"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="directionValueChanged:" destination="u1l-fa-5pk" eventType="valueChanged" id="Xwj-9E-0v5"/>
@@ -891,125 +895,125 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umr-Gh-jaw">
-                                <rect key="frame" x="16" y="135" width="343" height="171"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lessons:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-jU-Che">
-                                        <rect key="frame" x="140" y="0.0" width="63" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-6P-XHT">
-                                        <rect key="frame" x="20" y="62" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="1">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="aVa-hY-urV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWf-6a-uc7">
-                                        <rect key="frame" x="191" y="61" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="3">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="wqc-uk-bNq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-Oq-mac">
-                                        <rect key="frame" x="282" y="61" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="4">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="Shv-69-Z8r"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-Rk-4Wh">
-                                        <rect key="frame" x="20" y="123" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="5">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="E7o-fo-5OA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuM-Kw-wwM">
-                                        <rect key="frame" x="108" y="124" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="6">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="9Je-eZ-fHL"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-Yg-tH0">
-                                        <rect key="frame" x="191" y="123" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="7">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="Cey-RH-TJI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yI-C1-RaF">
-                                        <rect key="frame" x="108" y="61" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="2">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="KQ7-HQ-eMY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-sT-kQa">
-                                        <rect key="frame" x="282" y="124" width="30" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
-                                        <state key="normal" title="8">
-                                            <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="ByC-NT-DoO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Xvf-jU-Che" firstAttribute="centerX" secondItem="umr-Gh-jaw" secondAttribute="centerX" id="Lnw-ju-Tqf"/>
-                                    <constraint firstItem="Xvf-jU-Che" firstAttribute="top" secondItem="umr-Gh-jaw" secondAttribute="top" id="uCi-pE-B7d"/>
-                                </constraints>
-                            </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Srl-Ra-R6l">
-                                <rect key="frame" x="27.666666666666657" y="365" width="320" height="216"/>
+                                <rect key="frame" x="27" y="348" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="FJA-wI-dIQ"/>
+                                    <constraint firstAttribute="width" constant="320" id="hdb-qa-dOM"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="576705405.49682498">
                                     <!--2019-04-11 19:56:45 +0000-->
                                 </date>
                             </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-iX-CNJ">
+                                <rect key="frame" x="50" y="134" width="275" height="116.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lessons:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-jU-Che">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-e3-NhE">
+                                        <rect key="frame" x="0.0" y="35.333333333333343" width="275" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-6P-XHT">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="aVa-hY-urV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yI-C1-RaF">
+                                                <rect key="frame" x="72.666666666666671" y="0.0" width="57.333333333333329" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="KQ7-HQ-eMY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWf-6a-uc7">
+                                                <rect key="frame" x="145" y="0.0" width="57.666666666666657" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="wqc-uk-bNq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-Oq-mac">
+                                                <rect key="frame" x="217.66666666666669" y="0.0" width="57.333333333333314" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="Shv-69-Z8r"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-7a-qk7">
+                                        <rect key="frame" x="0.0" y="83.333333333333343" width="275" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-Rk-4Wh">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="E7o-fo-5OA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuM-Kw-wwM">
+                                                <rect key="frame" x="72.666666666666671" y="0.0" width="57.333333333333329" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="9Je-eZ-fHL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-Yg-tH0">
+                                                <rect key="frame" x="145" y="0.0" width="57.666666666666657" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="Cey-RH-TJI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gg-sT-kQa">
+                                                <rect key="frame" x="217.66666666666669" y="0.0" width="57.333333333333314" height="33"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="lessonButtonPress:" destination="KKq-IK-H41" eventType="touchUpInside" id="ByC-NT-DoO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="umr-Gh-jaw" firstAttribute="trailing" secondItem="ftv-9D-ic9" secondAttribute="trailingMargin" id="6A9-OT-KUv"/>
-                            <constraint firstItem="Srl-Ra-R6l" firstAttribute="top" secondItem="umr-Gh-jaw" secondAttribute="bottom" constant="59" id="95U-N3-wgf"/>
-                            <constraint firstItem="umr-Gh-jaw" firstAttribute="top" secondItem="5wp-Cg-gsv" secondAttribute="top" constant="91" id="VTo-jF-WIs"/>
-                            <constraint firstItem="umr-Gh-jaw" firstAttribute="leading" secondItem="ftv-9D-ic9" secondAttribute="leadingMargin" id="WPh-sw-dnu"/>
-                            <constraint firstItem="5wp-Cg-gsv" firstAttribute="bottom" secondItem="umr-Gh-jaw" secondAttribute="bottom" constant="472" id="dFk-lL-xLd"/>
-                            <constraint firstItem="umr-Gh-jaw" firstAttribute="centerX" secondItem="Srl-Ra-R6l" secondAttribute="centerX" id="tbe-8Y-RO9"/>
+                            <constraint firstItem="Y91-iX-CNJ" firstAttribute="top" secondItem="5wp-Cg-gsv" secondAttribute="top" constant="90" id="9xl-yd-zDR"/>
+                            <constraint firstItem="5wp-Cg-gsv" firstAttribute="trailing" secondItem="Y91-iX-CNJ" secondAttribute="trailing" constant="50" id="GZH-Wq-tX0"/>
+                            <constraint firstItem="Y91-iX-CNJ" firstAttribute="leading" secondItem="5wp-Cg-gsv" secondAttribute="leading" constant="50" id="MvE-dD-45F"/>
+                            <constraint firstItem="Srl-Ra-R6l" firstAttribute="leading" secondItem="5wp-Cg-gsv" secondAttribute="leading" constant="27" id="WOf-Ct-ehB"/>
+                            <constraint firstItem="Srl-Ra-R6l" firstAttribute="top" secondItem="Y91-iX-CNJ" secondAttribute="bottom" constant="97.666666666666686" id="lbh-9D-08W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5wp-Cg-gsv"/>
                     </view>
@@ -1022,7 +1026,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="Srl-Ra-R6l" id="43Y-aA-oAi"/>
-                        <outlet property="lessonView" destination="umr-Gh-jaw" id="CXf-JX-dSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myI-Sa-PvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,12 +1074,12 @@
         <scene sceneID="5Uz-IP-mfp">
             <objects>
                 <tableViewController storyboardIdentifier="CleaningViewController" id="CH1-Ro-xMt" customClass="CleaningViewController" customModule="App_hse" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jqb-vS-5tm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jqb-vS-5tm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="3OL-nI-S94">
                                 <cells>
@@ -1113,6 +1116,7 @@
                                                 <constraint firstItem="axy-5t-po2" firstAttribute="leading" secondItem="tSK-Uo-xlG" secondAttribute="leadingMargin" id="zkp-KD-rb3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="Kw9-P6-fEo">
                                         <rect key="frame" x="0.0" y="89" width="375" height="89"/>
@@ -1146,6 +1150,7 @@
                                                 <constraint firstItem="wWo-NA-2Ac" firstAttribute="top" secondItem="TiK-Cg-n9W" secondAttribute="bottom" constant="8" symbolic="YES" id="tYm-TS-cId"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="3bc-GQ-8zY">
                                         <rect key="frame" x="0.0" y="178" width="375" height="89"/>
@@ -1179,6 +1184,7 @@
                                                 <constraint firstItem="xdd-xd-Mu9" firstAttribute="trailing" secondItem="rAK-db-0Sr" secondAttribute="trailingMargin" id="zPH-PO-Vdi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="qzE-Zw-Sul">
                                         <rect key="frame" x="0.0" y="267" width="375" height="89"/>
@@ -1212,6 +1218,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="joL-Xv-oWQ" secondAttribute="bottom" constant="-1" id="oO6-Mh-vUy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1268,7 +1275,7 @@ Be sure to include your apartment number, name and surname, contact details.</st
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q0y-tb-h3S" firstAttribute="width" secondItem="BSj-55-tgR" secondAttribute="width" id="61Q-Aj-yVh"/>
                             <constraint firstItem="GfU-GF-6Sv" firstAttribute="centerX" secondItem="v54-FT-vrp" secondAttribute="centerX" id="9th-hc-FsM"/>
@@ -1282,6 +1289,9 @@ Be sure to include your apartment number, name and surname, contact details.</st
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lyn-jU-Ecr"/>
                     </view>
+                    <connections>
+                        <outlet property="sendEmail" destination="q0y-tb-h3S" id="8b6-bl-ZLb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlB-Qc-iGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1294,7 +1304,8 @@ Be sure to include your apartment number, name and surname, contact details.</st
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PK8-dp-VFK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostsCell" rowHeight="182" id="abX-aH-9ke" customClass="PostsCell" customModule="App_hse" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="182"/>
@@ -1314,12 +1325,12 @@ Be sure to include your apartment number, name and surname, contact details.</st
                                             <rect key="frame" x="93" y="31" width="224" height="34"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jj-AW-EiX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="17.333333333333332"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="17.666666666666668"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-5p-9p6">
-                                                    <rect key="frame" x="0.0" y="17.333333333333336" width="78.333333333333329" height="16.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="17.666666666666664" width="68" height="16.333333333333336"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1423,7 +1434,7 @@ by Vlada Vakulenko</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nfc-LF-LzX" firstAttribute="trailing" secondItem="9dd-7O-CSU" secondAttribute="trailing" constant="16" id="0Us-em-dHj"/>
                             <constraint firstItem="Xya-OD-st7" firstAttribute="top" secondItem="nfc-LF-LzX" secondAttribute="top" constant="24" id="0yi-pY-xqM"/>
@@ -1472,7 +1483,7 @@ by Vlada Vakulenko</string>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dormitory payment contract number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku5-g9-poS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Patronymic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku5-g9-poS">
                                 <rect key="frame" x="16" y="396" width="333" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
@@ -1485,18 +1496,27 @@ by Vlada Vakulenko</string>
                                     <constraint firstAttribute="width" constant="132" id="jBj-Lb-W45"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dormitory payment contract number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hw-g0-hll">
+                                <rect key="frame" x="16" y="439" width="333" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0hw-g0-hll" firstAttribute="top" secondItem="Ku5-g9-poS" secondAttribute="bottom" constant="13" id="0bi-dm-4Dp"/>
                             <constraint firstItem="TjX-wa-3YA" firstAttribute="leading" secondItem="a2q-XB-roW" secondAttribute="leadingMargin" id="2Af-EO-52Q"/>
                             <constraint firstItem="TjX-wa-3YA" firstAttribute="trailing" secondItem="tKa-Uc-tAZ" secondAttribute="trailing" id="2gu-y0-W1b"/>
                             <constraint firstItem="TjX-wa-3YA" firstAttribute="top" secondItem="igN-UU-F20" secondAttribute="bottom" constant="50" id="3ZU-vw-tm1"/>
+                            <constraint firstItem="0hw-g0-hll" firstAttribute="trailing" secondItem="Ku5-g9-poS" secondAttribute="trailing" id="Dhl-hg-QGR"/>
                             <constraint firstItem="TjX-wa-3YA" firstAttribute="leading" secondItem="tKa-Uc-tAZ" secondAttribute="leading" id="Zj9-sO-oNB"/>
                             <constraint firstItem="Ku5-g9-poS" firstAttribute="leading" secondItem="tKa-Uc-tAZ" secondAttribute="leading" id="gDV-vH-8MI"/>
                             <constraint firstItem="igN-UU-F20" firstAttribute="top" secondItem="SaS-Qu-6Hh" secondAttribute="top" constant="40" id="iXW-wf-jmP"/>
                             <constraint firstItem="tKa-Uc-tAZ" firstAttribute="top" secondItem="TjX-wa-3YA" secondAttribute="bottom" constant="13" id="jGG-PI-fcN"/>
                             <constraint firstItem="Ku5-g9-poS" firstAttribute="top" secondItem="tKa-Uc-tAZ" secondAttribute="bottom" constant="13" id="lYn-wJ-T2U"/>
                             <constraint firstItem="Ku5-g9-poS" firstAttribute="trailing" secondItem="tKa-Uc-tAZ" secondAttribute="trailing" id="o4M-D5-MDi"/>
+                            <constraint firstItem="0hw-g0-hll" firstAttribute="leading" secondItem="Ku5-g9-poS" secondAttribute="leading" id="rGA-HF-SO3"/>
                             <constraint firstItem="SaS-Qu-6Hh" firstAttribute="trailing" secondItem="TjX-wa-3YA" secondAttribute="trailing" constant="26" id="s1a-DU-Was"/>
                             <constraint firstItem="igN-UU-F20" firstAttribute="centerX" secondItem="a2q-XB-roW" secondAttribute="centerX" id="ujB-Qj-g7I"/>
                         </constraints>
@@ -1515,7 +1535,7 @@ by Vlada Vakulenko</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUv-r6-4GR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="2011"/>
+            <point key="canvasLocation" x="-151.19999999999999" y="2010.5911330049262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a4l-YW-nGj">

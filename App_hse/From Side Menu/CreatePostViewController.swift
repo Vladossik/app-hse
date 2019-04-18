@@ -72,6 +72,10 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
         messageText.layer.cornerRadius = 5.0
         messageText.layer.borderWidth = 0.5
         
+        buttonPost.layer.borderColor = UIColor.lightGray.cgColor
+        buttonPost.layer.cornerRadius = 5.0
+        buttonPost.layer.borderWidth = 0.5
+        
         picker.delegate = self
         picker.dataSource = self
         
@@ -95,7 +99,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
     }
 
     override func viewDidLayoutSubviews() {
-        buttonPost.setGradientBackground(colorOne: Colors.waterBlue66, colorTwo: Colors.niceBlue86)
+//        buttonPost.setGradientBackground(colorOne: Colors.waterBlue66, colorTwo: Colors.niceBlue86)
     }
     
     

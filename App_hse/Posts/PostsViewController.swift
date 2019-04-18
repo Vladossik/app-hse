@@ -89,14 +89,10 @@ class PostsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-//        headerView.backgroundColor = UIColor.clear
        headerView.backgroundColor = Colors.veryLightPink
         return headerView
     }
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return posts.count
-//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //достать ячейку из кеша
@@ -135,39 +131,6 @@ class PostsViewController: UITableViewController {
             return PostsCell()
         }
     }
-    
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        //достать ячейку из кеша
-//        if let cell = tableView.dequeueReusableCell(
-//            withIdentifier: "PostsCell", for: indexPath) as? PostsCell {
-//            let post = posts[indexPath.row]
-//
-//            if let profile = profiles.first(where: { $0.id == post.signerID }) {
-//                let url = URL(string: profile.photo50)!
-//                cell.avatarUser?.kf.setImage(with: url)
-//                cell.setup(item: post, profile: profile)
-//                cell.nameUser?.text = profile.firstName
-//                cell.lastNameUser.isHidden = false
-//                cell.lastNameUser?.text = profile.lastName
-//            } else if let group = groups.first(where: { -$0.id == post.ownerID }) {
-//                let url = URL(string: group.photo50)!
-//                cell.avatarUser?.kf.setImage(with: url)
-//                cell.setup(item: post, group: group)
-//                cell.nameUser?.text = group.name
-//                cell.lastNameUser.isHidden = true
-//            }
-//
-//            cell.textPost.text = post.text
-//                .split(separator: "\n")
-//                .filter {!$0.starts(with: "#") && !$0.isEmpty}
-//                .joined()
-//
-//            return cell
-//        } else {
-//            return PostsCell()
-//        }
-//    }
     
     @objc private func refresh() {
         if let refreshControl = refreshControl {

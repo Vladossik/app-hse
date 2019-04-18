@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
         
         sideMenu()
         showUserPhoto()
-        
+        self.hideKeyboardWhenTappedAround()
 //        avatar.layer.cornerRadius = avatar.frame.size.width / 2
 //        avatar.clipsToBounds = true
   

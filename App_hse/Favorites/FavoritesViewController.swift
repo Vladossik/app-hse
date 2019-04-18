@@ -27,18 +27,34 @@ class FavoritesViewController: UITableViewController {
         
         sideMenu()
         loadData()
-        
-
     }
 
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return posts.count
+//    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return self.posts.count
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = Colors.veryLightPink
+        return headerView
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "\(PostsCell.self)",
             for: indexPath) as? PostsCell {
@@ -48,12 +64,17 @@ class FavoritesViewController: UITableViewController {
                 .split(separator: "\n")
                 .filter {!$0.starts(with: "#") && !$0.isEmpty}
                 .joined()
-//            cell.textPost?.text = post.text
+
             cell.nameUser?.text = post.name
             cell.lastNameUser?.text = post.surname
             cell.clicked = true
             
             cell.setup(postInfo: post)
+            
+            cell.backgroundColor = UIColor.white
+            cell.layer.borderWidth = 0.1
+            cell.layer.cornerRadius = 9
+            cell.clipsToBounds = true
             
             return cell
         } else {
@@ -73,7 +94,6 @@ class FavoritesViewController: UITableViewController {
     }
     
       private func loadData(completion: (() -> Void)? = nil) {
-//    private func loadData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.storageManager.fetch { [weak self] posts in
             self?.posts = posts
