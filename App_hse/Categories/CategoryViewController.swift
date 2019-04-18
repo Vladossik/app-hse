@@ -118,7 +118,6 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let bundle = Bundle.main
         let mainStoryboard = UIStoryboard(name: "Main", bundle: bundle)
         
-        //дописать!!
         switch category.name {
 //        case "Dormitory fee"
         case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games":

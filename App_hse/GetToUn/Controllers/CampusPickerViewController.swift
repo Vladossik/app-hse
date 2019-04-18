@@ -14,26 +14,26 @@ class CampusPickerViewController: UITableViewController {
     
     var selectedCampusIndex: Int!
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        if segue.identifier == "SaveSelectedCampus" {
-//            if let cell = sender as? UITableViewCell {
-//                let indexPath = tableView.indexPath(for: cell)
-//                selectedCampusIndex = indexPath?.row
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "SaveSelectedCampus" {
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPath(for: cell)
+                selectedCampusIndex = indexPath?.row
+            }
+        }
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        //Other row is selected - need to deselect it
-//        if let index = selectedCampusIndex {
-//            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
-//            cell?.accessoryType = .none
-//        }
+        //Other row is selected - need to deselect it
+        if let index = selectedCampusIndex {
+            let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
+            cell?.accessoryType = .none
+        }
         
         //selectedCampus = campuses![indexPath.row] as? Dictionary<String, AnyObject>
         selectedCampusIndex = indexPath.row
@@ -65,7 +65,7 @@ class CampusPickerViewController: UITableViewController {
             cell.accessoryType = .none
         }
         
-        return cell;
+        return cell
     }
 
     override func viewDidLoad() {

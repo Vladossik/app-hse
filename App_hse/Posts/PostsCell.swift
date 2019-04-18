@@ -28,6 +28,17 @@ class PostsCell: UITableViewCell {
         }
     }
     
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set(newFrame) {
+            super.frame = newFrame
+            super.frame.origin.x += 8
+            super.frame.size.width -= 2 * 8
+        }
+    }
+    
     var profile: Profile?
     var group: Group?
     var item: Item?

@@ -130,9 +130,6 @@ class PostsViewController: UITableViewController {
             cell.layer.cornerRadius = 9
             cell.clipsToBounds = true
            
-            // fix
-            cell.layer.frame = cell.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
-           
             return cell
         } else {
             return PostsCell()

@@ -86,18 +86,18 @@ class RouteDataModel: NSObject {
             let transit1 = TransitionStep(arrival: train.departure, from: t1From, to: t1To, duration: t1Duration)
             
             // автобусом
-            let bus = BusStep(arrival: transit1.departure, from: "Дубки", to: "Одинцово")
+            //let bus = BusStep(arrival: transit1.departure, from: "Дубки", to: "Одинцово")
             
             // общая информация о пути
             let wayFrom = dorm["title"] as! String
             let wayTo = campus["title"] as! String
-            let wayDeparture = bus.departure.dateByAddingMinute(-10)! // 10 минут на сборы
+            let wayDeparture = transit1.departure.dateByAddingMinute(-10)! // 10 минут на сборы
             let wayArrival = onfoot.arrival
             let way = TotalStep(from: wayFrom, to: wayTo, departure: wayDeparture, arrival: wayArrival)
             
             // формирование информации о пути
             route.append(way)
-            route.append(bus)
+            // route.append(bus)
             if transit1.duration > 0 {
                 route.append(transit1)
             }

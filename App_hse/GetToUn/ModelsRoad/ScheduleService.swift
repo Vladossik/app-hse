@@ -119,9 +119,10 @@ class ScheduleService: NSObject {
 //        let YANDEX_API_KEY = apikeys!["rasp.yandex.ru"]
         let YANDEX_API_KEY = apikeys
         // URL of train schedule API provider
-        let TRAIN_API_URL = "https://api.rasp.yandex.net/v3.0/search/?apikey=%@&format=json&date=%@&from=%@&to=%@&lang=ru&transport_types=suburban"
+        let TRAIN_API_URL = "https://api.rasp.yandex.net/v1.0/search/?apikey=%@&format=json&date=%@&from=%@&to=%@&lang=ru&transport_types=suburban"
         
         let api_url = String(format: TRAIN_API_URL, YANDEX_API_KEY, date, from, to)
+        print(api_url)
         
         // загрузка распияния из интернета
         if let trainSchedule = try? Data(contentsOf: URL(string: api_url)!) {

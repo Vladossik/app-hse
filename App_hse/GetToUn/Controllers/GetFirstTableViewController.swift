@@ -14,7 +14,7 @@ class GetFirstTableViewController: UITableViewController {
     @IBOutlet weak var directionSegmentControl: UISegmentedControl!
     @IBOutlet weak var campusLabel: UILabel!
     @IBOutlet weak var whenLabel: UILabel!
-
+ 
     // variable of view controller
     // selected campus
     var campus: Dictionary<String, AnyObject>? {
@@ -47,6 +47,13 @@ class GetFirstTableViewController: UITableViewController {
     
     // when direction segment change value
     @IBAction func directionValueChanged(_ sender: AnyObject) {
+        tableView.reloadData()
+    }
+    
+    // before view on screen for update fortune quote
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         tableView.reloadData()
     }
     
@@ -90,9 +97,5 @@ class GetFirstTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }

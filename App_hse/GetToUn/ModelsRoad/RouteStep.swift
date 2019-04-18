@@ -316,8 +316,7 @@ class TrainStep: RouteStep {
         // получить расписание электричек
         let trains = scheduleService.getScheduleTrain(fromCode, to: toCode, timestamp: departure)
 
-        if trains == nil || trains!.count == 0 {
-            //TODO: добавить сообщение об ошибки пользователю
+        if trains == nil || trains!.isEmpty {
             print("Не получилось загрузить расписание электричек")
             return
         }
@@ -375,7 +374,6 @@ class TrainStep: RouteStep {
         let trains = scheduleService.getScheduleTrain(fromCode, to: toCode, timestamp: arrival)
 
         if trains == nil || trains!.count == 0 {
-            //TODO: добавить сообщение об ошибки пользователю
             print("Не получилось загрузить расписание электричек")
             return
         }
