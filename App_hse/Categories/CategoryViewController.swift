@@ -9,8 +9,6 @@
 import UIKit
 import SwiftyVK
 
-var disclaimerHasBeenDisplayed = false
-
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -47,16 +45,17 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let AlertOnce = UserDefaults.standard
         if(!AlertOnce.bool(forKey: "oneTimeAlert")){
-            let alert = UIAlertController(title: "Are you subscribed to a group?", message: "if not then we will sign you.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Do you want to subscribe to a group??", message: "so you will see new posts.", preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
+                self.addGroup()
+                
                 AlertOnce.set(true , forKey: "oneTimeAlert")
                 AlertOnce.synchronize()
             }))
             
             alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
-                self.addGroup()
+                alert.dismiss(animated: true, completion: nil)
                 AlertOnce.set(true , forKey: "oneTimeAlert")
                 AlertOnce.synchronize()
             }))

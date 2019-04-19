@@ -19,6 +19,32 @@ class PostsViewController: UITableViewController {
     
     var hashtag: String?
     
+    
+    @IBAction func bellGroup(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Do you want to subscribe to a group??", message: "so you will see new posts.", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.addGroup()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func addGroup(completion: (() -> Void)? = nil) {
+        let parameters: [Parameter: String] = [
+            .groupId : "177771483"
+        ]
+        
+        VK.API.Groups.join(parameters)
+            .onSuccess({data in print(data)})
+            .onError ({ error in print(error)})
+            .send()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableView.register(UINib(nibName: "PostsCell", bundle: Bundle.main), forCellReuseIdentifier: "Posts

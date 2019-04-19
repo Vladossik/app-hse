@@ -608,7 +608,13 @@
                             <outlet property="delegate" destination="pYF-xt-aDo" id="w0b-BC-yEW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="h5V-sc-gCO"/>
+                    <navigationItem key="navigationItem" id="h5V-sc-gCO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell" id="K4u-xN-4hb" userLabel="bell">
+                            <connections>
+                                <action selector="bellGroup:" destination="pYF-xt-aDo" id="gei-Cr-8RF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1h-ca-wgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1324,14 +1330,14 @@ Be sure to include your apartment number, name and surname, contact details.</st
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Arh-La-fY3">
                                             <rect key="frame" x="93" y="31" width="224" height="34"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jj-AW-EiX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="17.666666666666668"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jj-AW-EiX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-5p-9p6">
-                                                    <rect key="frame" x="0.0" y="17.666666666666664" width="68" height="16.333333333333336"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                    <rect key="frame" x="0.0" y="18" width="72.666666666666671" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1614,6 +1620,7 @@ by Vlada Vakulenko</string>
         <image name="Backfround" width="375" height="667"/>
         <image name="LogoHSE" width="700" height="700"/>
         <image name="apphse" width="1024" height="1024"/>
+        <image name="bell" width="22" height="22"/>
         <image name="clickStar" width="50" height="50"/>
         <image name="menu-icon" width="40" height="40"/>
         <image name="sendEmail" width="512" height="512"/>

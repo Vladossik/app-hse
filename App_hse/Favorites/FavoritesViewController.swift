@@ -64,9 +64,14 @@ class FavoritesViewController: UITableViewController {
                 .split(separator: "\n")
                 .filter {!$0.starts(with: "#") && !$0.isEmpty}
                 .joined()
-
-            cell.nameUser?.text = post.name
-            cell.lastNameUser?.text = post.surname
+            if cell.lastNameUser != nil {
+                cell.nameUser?.text = post.name
+                cell.lastNameUser?.text = post.surname
+            } else {
+                cell.nameUser?.text = post.name
+                cell.lastNameUser.isHidden = true
+            }
+            
             cell.clicked = true
             
             cell.setup(postInfo: post)

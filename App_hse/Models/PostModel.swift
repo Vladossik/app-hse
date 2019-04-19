@@ -40,7 +40,7 @@ struct Group: Codable {
     let name, screenName: String
     let isClosed: Int
     let type: String
-    let isAdmin, adminLevel, isMember, isAdvertiser: Int
+//    let isAdmin, adminLevel, isMember, isAdvertiser: Int
     let photo50: String
     
     enum CodingKeys: String, CodingKey {
@@ -48,10 +48,10 @@ struct Group: Codable {
         case screenName = "screen_name"
         case isClosed = "is_closed"
         case type
-        case isAdmin = "is_admin"
-        case adminLevel = "admin_level"
-        case isMember = "is_member"
-        case isAdvertiser = "is_advertiser"
+//        case isAdmin = "is_admin"
+//        case adminLevel = "admin_level"
+//        case isMember = "is_member"
+//        case isAdvertiser = "is_advertiser"
         case photo50 = "photo_50"
     }
 }
@@ -61,7 +61,7 @@ struct Item: Codable {
     let markedAsAds: Int
     let postType, text: String
     let signerID, canEdit, createdBy: Int?
-    let canDelete, canPin: Int
+//    let canDelete, canPin: Int
     let postSource: PostSource
     let comments: Comments
     let likes: Likes
@@ -79,8 +79,8 @@ struct Item: Codable {
         case signerID = "signer_id"
         case canEdit = "can_edit"
         case createdBy = "created_by"
-        case canDelete = "can_delete"
-        case canPin = "can_pin"
+//        case canDelete = "can_delete"
+//        case canPin = "can_pin"
         case postSource = "post_source"
         case comments, likes, reposts
         case isFavorite = "is_favorite"
@@ -90,13 +90,13 @@ struct Item: Codable {
 struct Comments: Codable {
     let count, canPost: Int
     let groupsCanPost: Bool
-    let canClose: Int
+//    let canClose: Int
     
     enum CodingKeys: String, CodingKey {
         case count
         case canPost = "can_post"
         case groupsCanPost = "groups_can_post"
-        case canClose = "can_close"
+//        case canClose = "can_close"
     }
 }
 
