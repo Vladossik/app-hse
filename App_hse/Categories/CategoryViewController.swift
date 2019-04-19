@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyVK
+import SafariServices
 
 class CategoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -119,6 +120,19 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         switch category.name {
 //        case "Dormitory fee"
+        case "Dormitory fee":
+            guard
+                let url = URL(string: "https://pay.hse.ru/moscow/prg")
+            else { return }
+            
+            if ["http", "https"].contains(url.scheme?.lowercased() ?? "") {
+                // Can open with SFSafariViewController
+                let safariViewController = SFSafariViewController(url: url)
+                self.present(safariViewController, animated: true, completion: nil)
+            } else {
+                // Scheme is not supported or no scheme is given, use openURL
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         case "Lost things", "Selling", "Free of charge", "Promo codes", "Taxi", "Board games":
             let identifier = "\(PostsViewController.self)"
             let postsViewController = mainStoryboard.instantiateViewController(withIdentifier: identifier) as! PostsViewController
