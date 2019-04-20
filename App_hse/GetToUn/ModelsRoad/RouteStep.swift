@@ -10,23 +10,20 @@ import Foundation
 import SwiftyJSON
 import UIKit
 
-// Структура для хранения одного шага маршрута
 class RouteStep {
 
-    var from: String?      // откуда (станция метро, ж/д, автобуса)
-    var to: String?        // куда (станция метро, ж/д, автобуса)
-    var departure: Date  // время отправления
-    var arrival: Date    // время прибытия
-    var duration: Int      // время в пути (в минутах)
+    var from: String?
+    var to: String?
+    var departure: Date
+    var arrival: Date
+    var duration: Int
 
-    // заголовок шага - вид шага и время в пути (для вывода на экран)
     var title: String? {
         get {
             return NSLocalizedString("NoneParameter", comment: "")
         }
     }
     
-    // описание шага - станции откуда/куда и время отправления/прибытия (для вывода на экран)
     var detail: String? {
         get {
             return ""
@@ -40,14 +37,12 @@ class RouteStep {
     }
 }
 
-// MARK: - Route Total
 
 class TotalStep: RouteStep {
 
     override var title: String {
         get {
-            //let titleFormat = NSLocalizedString("TotalTitleFormat", comment: "")
-            return String (format: "🏁 %@ → %@", from ?? "?", to ?? "?")
+            return String (format: "%@ to %@", from ?? "?", to ?? "?")
         }
     }
     override var detail: String {
@@ -57,7 +52,7 @@ class TotalStep: RouteStep {
             let timeArrival = arrival.string("HH:mm")
             //let dateArrival = arrival.string("dd MMM HH:mm")
             let detailFormat = NSLocalizedString("TotalDetailFormat", comment: "")
-            return String(format: detailFormat, dateDeparture, timeArrival, duration)
+            return String(format: detailFormat, duration, dateDeparture, timeArrival)
         }
     }
 
@@ -86,189 +81,15 @@ class TotalStep: RouteStep {
     }
 }
 
-// MARK: - Route On Bus
-
-class BusStep: RouteStep {
-    
-    override var title: String {
-        get {
-            return NSLocalizedString("Bus", comment: "") // "🚌 Автобус"
-        }
-    }
-    override var detail: String {
-        get {
-            let timeDeparture = departure.string("HH:mm")
-            let timeArrival = arrival.string("HH:mm")
-            return String(format: "%@ (%@) → %@ (%@)", from ?? "?", timeDeparture, to ?? "?", timeArrival)
-        }
-    }
-
-    init(departure: Date, from: String, to: String) {
-        super.init()
-        setNearestBusByDeparture(departure, from: from, to: to)
-    }
-
-    init(arrival: Date, from: String, to: String) {
-        super.init()
-        setNearestBusByArrival(arrival, from: from, to: to)
-    }
-
-    let scheduleService = ScheduleService.sharedInstance
-
-    /**
-     Returns the nearest bus by departure time
-
-     Args:
-     from(String): place of departure
-     to(String): place of arrival
-     departure(Date): time of departure
-
-     Note:
-     'from' and 'to' should not be equal and should be in {'Одинцово', 'Дубки'}
-     */
-    func setNearestBusByDeparture(_ departure: Date, from: String, to: String, useAsterisk: Bool = true) {
-//        // from and to should be in {'Одинцово', 'Дубки'}
-//        let vals = ["Одинцово", "Дубки"]
-//        //assert from in {'Одинцово', 'Дубки'}
-//        assert(vals.contains(from))
-//        //assert to in {'Одинцово', 'Дубки'}
-//        assert(vals.contains(to))
-//        //assert(from != to)
-//        assert(from != to, "From equal To")
-//
-//        // получить расписание автобуса (время отправления)
-//        let times = scheduleService.getScheduleBus(from, to: to, timestamp: departure)
-//
-//        if times == nil || times!.count == 0 {
-//            //TODO: добавить сообщение об ошибки пользователю
-//            print("Не получилось загрузить расписание автобуса")
-//            return
-//        }
-//
-//        // поиск ближайшего рейса (минимум ожидания)
-//        var minInterval: Double = 24*60*60 // мин. интервал (сутки)
-//        var busDeparture: Date?          // время отправления
-//        var slBlvdBus: Bool = false        // автобус до м.Славянский бульвара
-//
-//        for time in times! {
-//            var timeWithoutAsteriks = time
-//            // asterisk indicates bus arrival/departure station is 'Славянский бульвар'
-//            // it needs special handling
-//            if time.contains("*") {
-//                if !useAsterisk { continue } // не использовать автобус до м. Славянский бульвар
-//                timeWithoutAsteriks = time.substring(to: time.characters.index(before: time.endIndex))
-//            }
-//            let departureTime = departure.dateByWithTime(timeWithoutAsteriks)!
-//            let interval: Double = departureTime.timeIntervalSince(departure)
-//            //TODO: # FIXME works incorrectly between weekday 6-7-1
-//            if interval > 0 && interval < minInterval {
-//                minInterval = interval
-//                busDeparture = departureTime
-//                slBlvdBus = time.contains("*")
-//            }
-//        }
-//        if busDeparture == nil {
-//            //print("Ближайший автобус не найден")
-//            // get nearest bus on next day
-//            let newDeparture = departure.dateByAddingDay(1)!.dateByWithTime("00:00")!
-//            setNearestBusByDeparture(newDeparture, from: from, to: to)
-//            return
-//        }
-
-//        var slBlvdBus: Bool = false // автобус до м.Славянский бульвара
-//        self.from = from
-//        if useAsterisk && slBlvdBus {
-//            self.to = "Славянский бульвар"
-//            self.duration = 50 // время автобуса в пути
-//        } else {
-//            self.to = to
-//            self.duration = 15 // время автобуса в пути
-//        }
-//        self.departure = busDeparture!
-//        //TODO: # FIXME: more real arrival time?
-//        self.arrival = self.departure.dateByAddingMinute(duration)!
-    }
-
-    /**
-     Returns the nearest bus by arrival time
-
-     Args:
-     from(String): place of departure
-     to(String): place of arrival
-     arrival(Date): time of arrival
-
-     Note:
-     'from' and 'to' should not be equal and should be in {'Одинцово', 'Дубки'}
-     */
-    func setNearestBusByArrival(_ arrival: Date, from: String, to: String, useAsterisk: Bool = true) {
-//        // получить расписание автобуса (время отправления)
-//        let times = scheduleService.getScheduleBus(from, to: to, timestamp: arrival)
-//
-//        if times == nil || times!.count == 0 {
-//            //TODO: добавить сообщение об ошибки пользователю
-//            print("Не получилось загрузить расписание автобуса")
-//            return
-//        }
-//
-//        self.from = from
-//        self.to = to
-//        self.duration = 15 // время автобуса в пути
-//
-//        // поиск ближайшего рейса (минимум ожидания)
-//        var minInterval: Double = 24*60*60 // мин. интервал (сутки)
-//        var busDeparture: Date?          // время отправления
-//        //var slBlvdBus: Bool = false        // автобус до м.Славянский бульвара
-//
-//        for time in times! {
-//            var timeWithoutAsteriks = time
-//            // asterisk indicates bus arrival/departure station is 'Славянский бульвар'
-//            // it needs special handling
-//            if time.contains("*") {
-//                if !useAsterisk { continue } // не использовать автобус до м. Славянский бульвар
-//                timeWithoutAsteriks = time.substring(to: time.characters.index(before: time.endIndex))
-//            }
-//            let departureTime = arrival.dateByWithTime(timeWithoutAsteriks)!
-//            let arrivalTime = departureTime.dateByAddingMinute(duration)! // 15 minute
-//            let interval: Double = arrival.timeIntervalSince(arrivalTime)
-//            //TODO: # FIXME works incorrectly between weekday 6-7-1
-//            if interval > 0 && interval < minInterval {
-//                minInterval = interval
-//                busDeparture = departureTime
-//                //slBlvdBus = time.containsString("*")
-//            }
-//        }
-//        if busDeparture == nil {
-//            //print("Ближайший автобус не найден")
-//            // get nearest bus on next day
-//            let newArrival = arrival.dateByAddingDay(-1)!.dateByWithTime("23:59")!
-//            setNearestBusByArrival(newArrival, from: from, to: to)
-//            return
-//        }
-//
-//        self.departure = busDeparture!
-//        //TODO: # FIXME: more real arrival time?
-//        self.arrival = self.departure.dateByAddingMinute(duration)!
-    }
-}
-
-// MARK: - Route On Train
-
-/*
- A module which calculates the nearest train using an external API (Yandex.Rasp)
- Note that developer key for Yandex.Rasp is required (stored in .train_api_key)
- Also caches a schedule for today and two days later for faster access
- Key location and cached schedules' files are likely to change in future
- */
-
 class TrainStep: RouteStep {
 
-    var trainName: String? // название поезда или ветки метро
-    var stops: String?     // остановки ж/д или станции пересадки метро
-    var url: String?       // ссылка на расписание
+    var trainName: String?
+    var stops: String?
+    var url: String?
     
     override var title: String {
         get {
-            return NSLocalizedString("Train", comment: "") // "Электричка"
+            return NSLocalizedString("Suburban electric train", comment: "")
         }
     }
     override var detail: String {

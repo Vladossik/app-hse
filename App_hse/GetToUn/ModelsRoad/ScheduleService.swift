@@ -11,14 +11,11 @@ import SwiftyJSON
 
 class ScheduleService: NSObject {
     
-    // Singleton Class
     static let sharedInstance = ScheduleService()
     
     // API Keys
     let apikeys = "f6c89396-fac1-401a-9bd5-fa5b36eca4a3"
-//    let apikeys = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "apikeys", ofType: "plist")!) as? Dictionary<String, String>
     
-    // Standart User Default Settings
     let userDefaults = UserDefaults.standard
     
     let BUS_SCHEDULE_FILE = "bus.json"

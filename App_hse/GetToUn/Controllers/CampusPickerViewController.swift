@@ -15,8 +15,6 @@ class CampusPickerViewController: UITableViewController {
     var selectedCampusIndex: Int!
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "SaveSelectedCampus" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
@@ -29,16 +27,13 @@ class CampusPickerViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //Other row is selected - need to deselect it
         if let index = selectedCampusIndex {
             let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0))
             cell?.accessoryType = .none
         }
         
-        //selectedCampus = campuses![indexPath.row] as? Dictionary<String, AnyObject>
         selectedCampusIndex = indexPath.row
         
-        //update the checkmark for the current row
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
     }

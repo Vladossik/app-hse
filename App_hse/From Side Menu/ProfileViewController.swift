@@ -22,17 +22,6 @@ class ProfileViewController: UIViewController {
         sideMenu()
         showUserPhoto()
         self.hideKeyboardWhenTappedAround()
-//        avatar.layer.cornerRadius = avatar.frame.size.width / 2
-//        avatar.clipsToBounds = true
-  
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        
-//        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
-//        self.avatar.clipsToBounds = true
     }
     
     // left side menu
@@ -53,7 +42,6 @@ class ProfileViewController: UIViewController {
         var dataTask: URLSessionDataTask?
         let token = UserDefaults.standard.string(forKey: DefaultsKeys.accessToken)!
 
-        //UserDefaults.token)
         dataTask = session.dataTask(with: URL(string: "https://api.vk.com/method/users.get?fields=photo_200&v=5.92&access_token=" + token)!) { [weak self] data, r, error in
             guard let self = self else { return }
 

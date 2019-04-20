@@ -16,8 +16,6 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
        
         let mailComposeViewController = configureMailController()
         if MFMailComposeViewController.canSendMail() {
-            //let root = UIApplication.shared.keyWindow?.rootViewController
-            //root?.present(mailComposeViewController, animated: true, completion: nil)
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             showMailError()

@@ -6,11 +6,11 @@
 		<key>id</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>dubki</string>
+		<string>odincovo</string>
 		<key>title</key>
-		<string>Dubki</string>
+		<string>Odincovo</string>
 		<key>description</key>
-		<string>Domitory (Odincovo)</string>
+		<string>Odincovo</string>
 		<key>station</key>
 		<string>odincovo</string>
 		<key>subway</key>

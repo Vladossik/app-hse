@@ -6,9 +6,9 @@
 		<key>id</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>dubki</string>
+		<string>odincovo</string>
 		<key>title</key>
-		<string>Dubki</string>
+		<string>Odincovo</string>
 		<key>description</key>
 		<string>Domitory (Odincovo)</string>
 		<key>station</key>
@@ -20,9 +20,9 @@
 		<key>mapsrc</key>
 		<string></string>
 		<key>lon</key>
-		<string>37.228579</string>
+		<string>37.2796838</string>
 		<key>lat</key>
-		<string>55.660150</string>
+		<string>55.6698625</string>
 	</dict>
 </array>
 </plist>

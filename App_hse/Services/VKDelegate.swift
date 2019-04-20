@@ -68,11 +68,9 @@ final class VKDelegate: SwiftyVKDelegate {
         DispatchQueue.main.async {
             WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
                 records.forEach { record in
-//                    DispatchQueue.main.async {
                     WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-//                }
+                }
             }
-        }
         }
         UserDefaults.standard.synchronize()
     }

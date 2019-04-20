@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         vkDelegateReference = VKDelegate()
         VK.setUp(appId: "6849870", delegate: vkDelegateReference!)
-        //(vkDelegateReference as! VKDelegate).silentLogin()
         
         // Set application version into Settings.bundle
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
@@ -36,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let versionString = String(format: "%@ (%@)", version, build)
         
         let userDefaults = UserDefaults.standard
-        //print(userDefaults.stringForKey("version"))
         userDefaults.set(versionString, forKey: "version")
         userDefaults.synchronize()
         return true

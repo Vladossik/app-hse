@@ -33,15 +33,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        //rounded border for view
+
         roundedRectangle.layer.cornerRadius = 50
         
-        //title - HSE Dorm - text color
         appTitle.textColor = Colors.peacockBlue
         
-        //gradient color for button Login
         buttonLogIn.setGradientBackground(colorOne: Colors.waterBlue66, colorTwo: Colors.niceBlue86)
     }
     

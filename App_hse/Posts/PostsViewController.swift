@@ -47,10 +47,8 @@ class PostsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.register(UINib(nibName: "PostsCell", bundle: Bundle.main), forCellReuseIdentifier: "Posts
         
         getPosts()
-        
         self.refreshControl = UIRefreshControl()
         
         if let refreshControl = self.refreshControl {
@@ -145,7 +143,6 @@ class PostsViewController: UITableViewController {
                 .split(separator: "\n")
                 .filter {!$0.starts(with: "#") && !$0.isEmpty}
                 .joined()
-            
             
             cell.backgroundColor = UIColor.white
             cell.layer.borderWidth = 0.1

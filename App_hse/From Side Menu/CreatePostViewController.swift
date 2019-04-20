@@ -10,7 +10,7 @@ import UIKit
 import Just
 import SwiftyVK
 
-class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
+class CreatePostViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, SWRevealViewControllerDelegate {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var category: UITextField!
@@ -89,7 +89,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
     // left side menu
     func sideMenu() {
         
-        if revealViewController() != nil{
+        if revealViewController() != nil {
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController()?.rearViewRevealWidth = 275
@@ -98,11 +98,6 @@ class CreatePostViewController: UIViewController, UIPickerViewDataSource,UIPicke
         }
     }
 
-    override func viewDidLayoutSubviews() {
-//        buttonPost.setGradientBackground(colorOne: Colors.waterBlue66, colorTwo: Colors.niceBlue86)
-    }
-    
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

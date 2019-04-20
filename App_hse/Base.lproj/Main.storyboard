@@ -558,9 +558,8 @@
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="5tq-h6-1gY" secondAttribute="trailing" id="ZZN-47-naY"/>
                                             </constraints>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJy-bB-qQN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJy-bB-qQN">
                                             <rect key="frame" x="31" y="92" width="314" height="69"/>
-                                            <string key="text">Ребята, кто хочет небольшую съемку в Москве? Там сейчас очень атмосферно и празднично, а у меня хороший фотоаппарат и желание делать красивые снимки :) Я свободна завтра с 13:30 до вечера и в пятницу весь день.</string>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -628,58 +627,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteCell" textLabel="zFl-ea-vaj" detailTextLabel="Ejt-SM-RqO" style="IBUITableViewCellStyleSubtitle" id="PyM-gi-hms">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="14" reuseIdentifier="RouteCell" textLabel="zFl-ea-vaj" detailTextLabel="Ejt-SM-RqO" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="PyM-gi-hms">
+                                <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PyM-gi-hms" id="ZZT-Lp-yBn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zFl-ea-vaj">
-                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="15" y="23" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ejt-SM-RqO">
-                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ejt-SM-RqO">
+                                            <rect key="frame" x="14.999999999999996" y="46" width="37.666666666666664" height="13"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="TrainRouteCell" rowHeight="142" id="vzi-gD-QPJ" customClass="TrainRouteStepTableViewCell" customModule="App_hse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="142"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="14" reuseIdentifier="TrainRouteCell" rowHeight="135" id="vzi-gD-QPJ" customClass="TrainRouteStepTableViewCell" customModule="App_hse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vzi-gD-QPJ" id="1X3-Qb-mOd">
-                                    <rect key="frame" x="0.0" y="0.0" width="327" height="141.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="134.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVf-qz-yD0" userLabel="Title Label">
-                                            <rect key="frame" x="16" y="11" width="302" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="16" y="5" width="302" height="21"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train Name: Stops: Entry to Station:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYm-HF-oRg" userLabel="Detail Label">
-                                            <rect key="frame" x="16" y="40" width="303" height="50"/>
+                                            <rect key="frame" x="16" y="25" width="303" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="3Ap-dt-zGO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="yandex-rasp" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-4X-Gwt">
-                                            <rect key="frame" x="16" y="98" width="160" height="26"/>
+                                            <rect key="frame" x="16" y="84" width="139" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="139" id="TRn-mR-ibB"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data are provided by service of Yandex.Raspisaniya" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-0X-Qqj">
-                                            <rect key="frame" x="184" y="98" width="134" height="26"/>
+                                            <rect key="frame" x="163" y="84" width="155" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -693,11 +697,11 @@
                                         <constraint firstItem="hYm-HF-oRg" firstAttribute="leading" secondItem="dRC-4X-Gwt" secondAttribute="leading" id="aM7-ed-pru"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="n7n-0X-Qqj" secondAttribute="trailing" constant="1" id="dMa-XM-uyW"/>
                                         <constraint firstItem="n7n-0X-Qqj" firstAttribute="bottom" secondItem="dRC-4X-Gwt" secondAttribute="bottom" id="fqe-6D-woV"/>
-                                        <constraint firstItem="hYm-HF-oRg" firstAttribute="top" secondItem="1X3-Qb-mOd" secondAttribute="top" constant="40" id="m8d-y8-sJ4"/>
+                                        <constraint firstItem="hYm-HF-oRg" firstAttribute="top" secondItem="1X3-Qb-mOd" secondAttribute="top" constant="25" id="m8d-y8-sJ4"/>
                                         <constraint firstItem="hYm-HF-oRg" firstAttribute="trailing" secondItem="1X3-Qb-mOd" secondAttribute="trailingMargin" id="n5R-fq-Ko5"/>
-                                        <constraint firstItem="dRC-4X-Gwt" firstAttribute="top" secondItem="hYm-HF-oRg" secondAttribute="bottom" constant="8" symbolic="YES" id="oE5-ag-yhe"/>
+                                        <constraint firstItem="dRC-4X-Gwt" firstAttribute="top" secondItem="hYm-HF-oRg" secondAttribute="bottom" constant="9" id="oE5-ag-yhe"/>
                                         <constraint firstItem="n7n-0X-Qqj" firstAttribute="top" secondItem="dRC-4X-Gwt" secondAttribute="top" id="qSk-hf-59R"/>
-                                        <constraint firstItem="hYm-HF-oRg" firstAttribute="top" secondItem="OVf-qz-yD0" secondAttribute="bottom" constant="8" id="yIS-zv-5Jk"/>
+                                        <constraint firstItem="hYm-HF-oRg" firstAttribute="top" secondItem="OVf-qz-yD0" secondAttribute="bottom" constant="-1" id="vro-2L-yDK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -862,16 +866,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tSh-JU-vhR">
-                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="16" y="4" width="36" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wDA-K3-BGq">
-                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="16.000000000000004" y="25.000000000000004" width="47.333333333333336" height="14.666666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -902,7 +906,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Srl-Ra-R6l">
-                                <rect key="frame" x="27" y="348" width="320" height="216"/>
+                                <rect key="frame" x="27" y="348.66666666666669" width="320" height="216.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="FJA-wI-dIQ"/>
                                     <constraint firstAttribute="width" constant="320" id="hdb-qa-dOM"/>
@@ -912,16 +916,16 @@
                                 </date>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-iX-CNJ">
-                                <rect key="frame" x="50" y="134" width="275" height="116.33333333333331"/>
+                                <rect key="frame" x="50" y="134" width="275" height="117"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lessons:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-jU-Che">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select arrival time by Lessons:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvf-jU-Che">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="21"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-e3-NhE">
-                                        <rect key="frame" x="0.0" y="35.333333333333343" width="275" height="33"/>
+                                        <rect key="frame" x="0.0" y="36" width="275" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-6P-XHT">
                                                 <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="33"/>
@@ -966,7 +970,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-7a-qk7">
-                                        <rect key="frame" x="0.0" y="83.333333333333343" width="275" height="33"/>
+                                        <rect key="frame" x="0.0" y="84" width="275" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-Rk-4Wh">
                                                 <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="33"/>
@@ -1012,14 +1016,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select arrival time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX5-CD-WSJ">
+                                <rect key="frame" x="27" y="299" width="320" height="26.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Y91-iX-CNJ" firstAttribute="top" secondItem="5wp-Cg-gsv" secondAttribute="top" constant="90" id="9xl-yd-zDR"/>
                             <constraint firstItem="5wp-Cg-gsv" firstAttribute="trailing" secondItem="Y91-iX-CNJ" secondAttribute="trailing" constant="50" id="GZH-Wq-tX0"/>
+                            <constraint firstItem="Srl-Ra-R6l" firstAttribute="top" secondItem="JX5-CD-WSJ" secondAttribute="bottom" constant="23" id="Jmn-PT-oi9"/>
                             <constraint firstItem="Y91-iX-CNJ" firstAttribute="leading" secondItem="5wp-Cg-gsv" secondAttribute="leading" constant="50" id="MvE-dD-45F"/>
+                            <constraint firstItem="JX5-CD-WSJ" firstAttribute="top" secondItem="Y91-iX-CNJ" secondAttribute="bottom" constant="48" id="Ogz-hM-SiQ"/>
                             <constraint firstItem="Srl-Ra-R6l" firstAttribute="leading" secondItem="5wp-Cg-gsv" secondAttribute="leading" constant="27" id="WOf-Ct-ehB"/>
+                            <constraint firstItem="JX5-CD-WSJ" firstAttribute="trailing" secondItem="Srl-Ra-R6l" secondAttribute="trailing" id="acH-m5-Kct"/>
                             <constraint firstItem="Srl-Ra-R6l" firstAttribute="top" secondItem="Y91-iX-CNJ" secondAttribute="bottom" constant="97.666666666666686" id="lbh-9D-08W"/>
+                            <constraint firstItem="JX5-CD-WSJ" firstAttribute="leading" secondItem="Srl-Ra-R6l" secondAttribute="leading" id="v5s-gh-7lq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5wp-Cg-gsv"/>
                     </view>
@@ -1343,9 +1357,8 @@ Be sure to include your apartment number, name and surname, contact details.</st
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkA-FG-C0I">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет." textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkA-FG-C0I">
                                             <rect key="frame" x="31" y="92" width="314" height="69"/>
-                                            <string key="text">Ребята, кто хочет небольшую съемку в Москве? Там сейчас очень атмосферно и празднично, а у меня хороший фотоаппарат и желание делать красивые снимки :) Я свободна завтра с 13:30 до вечера и в пятницу весь день.</string>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1628,6 +1641,6 @@ by Vlada Vakulenko</string>
         <image name="yandex-rasp" width="160" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pac-Hn-hCJ"/>
+        <segue reference="0Z3-rz-SXW"/>
     </inferredMetricsTieBreakers>
 </document>

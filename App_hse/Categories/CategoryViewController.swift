@@ -119,7 +119,6 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
         let mainStoryboard = UIStoryboard(name: "Main", bundle: bundle)
         
         switch category.name {
-//        case "Dormitory fee"
         case "Dormitory fee":
             guard
                 let url = URL(string: "https://pay.hse.ru/moscow/prg")
@@ -181,13 +180,5 @@ class CategoryViewController: UIViewController, UICollectionViewDelegate, UIColl
             
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
-    }
-    
-//    func createAlert(title: String, message: String) {
-//
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>))
-//    }
-    
+    } 
 }
