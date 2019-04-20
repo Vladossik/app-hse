@@ -65,14 +65,15 @@ final class VKDelegate: SwiftyVKDelegate {
     private func clearSessionData() {
         URLCache.shared.removeAllCachedResponses()
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-            records.forEach { record in
-                DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+                records.forEach { record in
+//                    DispatchQueue.main.async {
                     WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-                }
+//                }
             }
         }
-        
+        }
         UserDefaults.standard.synchronize()
     }
 }
