@@ -11,6 +11,7 @@ import UIKit
 class FavoritesViewController: UITableViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     private var posts: [PostInfo] = []
     
     override func viewDidLoad() {

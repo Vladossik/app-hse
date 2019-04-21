@@ -17,7 +17,7 @@ class TrainRouteStepTableViewCell: UITableViewCell {
 
 class RouteTableTableViewController: UITableViewController {
     
-    let routeDataModel = RouteDataModel.sharedInstance
+    let roadModel = RoadModel.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class RouteTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routeDataModel.route.count
+        return roadModel.route.count
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +40,7 @@ class RouteTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let routeStep = routeDataModel.route[indexPath.row]
+        let routeStep = roadModel.route[indexPath.row]
         if  let trainStep = routeStep as? TrainStep {
             if trainStep.url != nil {
 //                UIApplication.shared.openURL(URL(string: trainStep.url!)!)
@@ -61,7 +61,7 @@ class RouteTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let routeStep = routeDataModel.route[indexPath.row]
+        let routeStep = roadModel.route[indexPath.row]
         if routeStep is TrainStep {
             return 120
         } else {
@@ -71,7 +71,7 @@ class RouteTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let routeStep = routeDataModel.route[indexPath.row]
+        let routeStep = roadModel.route[indexPath.row]
         
         if routeStep is TrainStep {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TrainRouteCell", for: indexPath) as! TrainRouteStepTableViewCell

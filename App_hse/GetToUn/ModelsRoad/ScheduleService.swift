@@ -17,14 +17,11 @@ class ScheduleService: NSObject {
     let apikeys = "f6c89396-fac1-401a-9bd5-fa5b36eca4a3"
     
     let userDefaults = UserDefaults.standard
-    
-    let BUS_SCHEDULE_FILE = "bus.json"
+
     let TRAIN_SCHEDULE_FILE = "train.json"
-    
-    var busFileURL: URL   // путь к файлу bus.json
     var trainFileURL: URL // путь к файлу train.json
     
-    var busSchedule: JSON?
+    //var busSchedule: JSON?
     var trainSchedule: JSON?
     var lastUpdate: Date? {
         get {
@@ -40,18 +37,10 @@ class ScheduleService: NSObject {
     // конструктор
     override init() {
         let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! as URL
-        busFileURL = documentsUrl.appendingPathComponent(BUS_SCHEDULE_FILE)
         trainFileURL = documentsUrl.appendingPathComponent(TRAIN_SCHEDULE_FILE)
         
         super.init()
         
-        //let fileManager = NSFileManager.defaultManager()
-        //if fileManager.fileExistsAtPath(filePath) {
-        
-        // загрузка расписания из файла bus.json
-        if let busData = try? Data(contentsOf: busFileURL) {
-            busSchedule = try! JSON(data: busData)
-        }
         // загрузка расписания из файла train.json
         if let trainData = try? Data(contentsOf: trainFileURL) {
             trainSchedule = try! JSON(data: trainData)
@@ -63,7 +52,7 @@ class ScheduleService: NSObject {
     // Кэширование расписания автобуса и электрички на сегодня
     func cacheSchedules() {
         if lastUpdate != nil && lastUpdate!.string("yyyyMMdd") == Date().string("yyyyMMdd") {
-            if busSchedule != nil && trainSchedule != nil {
+            if  trainSchedule != nil {
                 return
             }
         }
@@ -71,7 +60,7 @@ class ScheduleService: NSObject {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         cacheTrainSchedule()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        if busSchedule != nil && trainSchedule != nil {
+        if trainSchedule != nil {
             // update schedule successfull
             lastUpdate = Date()
         }

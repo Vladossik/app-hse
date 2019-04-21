@@ -111,7 +111,6 @@ class TrainStep: RouteStep {
         setNearestTrainByArrival(arrival, from: from, to: to)
     }
 
-    //let RASP_YANDEX_URL = "https://rasp.yandex.ru/"
     let RASP_YANDEX_URL = "https://rasp.yandex.ru/search/?when=%@&fromId=%@&toId=%@"
 
     let scheduleService = ScheduleService.sharedInstance
@@ -297,7 +296,7 @@ class SubwayStep: RouteStep {
     let subwayClosesTime = "01:00"
     let subwayOpensTime = "05:50"
     // название станций метро
-    let subways = RouteDataModel.sharedInstance.subways
+    let subways = RoadModel.sharedInstance.subways
 
     /**
      Returns the time required to get from one subway station to another

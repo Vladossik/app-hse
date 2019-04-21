@@ -672,7 +672,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="3Ap-dt-zGO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="11"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -852,7 +852,7 @@
         <!--Choose Campus-->
         <scene sceneID="Zof-95-gwz">
             <objects>
-                <tableViewController id="92G-rT-kfo" userLabel="Choose Campus" customClass="CampusPickerViewController" customModule="App_hse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="92G-rT-kfo" userLabel="Choose Campus" customClass="ChooseCampusViewController" customModule="App_hse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qdO-X8-esJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -900,7 +900,7 @@
         <!--Choose Time-->
         <scene sceneID="eov-1c-seQ">
             <objects>
-                <viewController id="KKq-IK-H41" customClass="TimePickerViewController" customModule="App_hse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KKq-IK-H41" customClass="ChooseTimeViewController" customModule="App_hse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ftv-9D-ic9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

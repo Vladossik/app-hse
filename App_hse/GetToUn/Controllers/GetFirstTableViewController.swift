@@ -39,7 +39,7 @@ class GetFirstTableViewController: UITableViewController {
         }
     }
     
-    let routeDataModel = RouteDataModel.sharedInstance
+   // let roadModel = RoadModel.sharedInstance
     let userDefaults = UserDefaults.standard
     
     // when direction segment change value
@@ -59,7 +59,7 @@ class GetFirstTableViewController: UITableViewController {
         if segue.identifier == "RouteShow"{
             if arrivalTime != nil {
             // по времени прибытия
-            RouteDataModel.sharedInstance
+            RoadModel.sharedInstance
                 .calculateRouteByArrival(arrivalTime!, direction: directionSegmentControl.selectedSegmentIndex, campus: campus!)
             }
         }
@@ -71,15 +71,15 @@ class GetFirstTableViewController: UITableViewController {
 
     // when press button done on campus picker view controller
     @IBAction func unwindWithSelectedCampus(_ segue:UIStoryboardSegue) {
-        if let campusPicker = segue.source as? CampusPickerViewController,
+        if let campusPicker = segue.source as? ChooseCampusViewController,
             let campusIndex = campusPicker.selectedCampusIndex {
-            campus = RouteDataModel.sharedInstance.campuses![campusIndex + 1]
+            campus = RoadModel.sharedInstance.campuses![campusIndex + 1]
         }
     }
     
     // when press button done on time picker view controller
     @IBAction func unwindSelectedTime(_ segue:UIStoryboardSegue) {
-        if let timePicker = segue.source as? TimePickerViewController {
+        if let timePicker = segue.source as? ChooseTimeViewController {
             arrivalTime = timePicker.arrivalTime
         }
     }

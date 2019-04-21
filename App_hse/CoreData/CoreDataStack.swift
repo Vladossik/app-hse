@@ -18,26 +18,25 @@ protocol ICoreDataStack {
 
 final class CoreDataStack: ICoreDataStack {
     
-    // MARK: Private Properties
     
     private let resourceName: String
     private let storeType: String
     
-    // MARK: Lifecycle
+    // Lifecycle
     
     init(resourceName: String) {
         self.resourceName = resourceName
         self.storeType = NSSQLiteStoreType
     }
     
-    // MARK: Model
+    // Model
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = Bundle.main.url(forResource: resourceName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    // MARK: Coordinator
+    // Coordinator
     
     private var storeUrl: URL {
         let documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -62,7 +61,7 @@ final class CoreDataStack: ICoreDataStack {
         return coordinator
     }()
     
-    // MARK: Contexts
+    // Contexts
     
     lazy private var masterContext: NSManagedObjectContext = {
         var masterContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)

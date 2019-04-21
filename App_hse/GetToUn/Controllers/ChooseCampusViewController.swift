@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CampusPickerViewController: UITableViewController {
+class ChooseCampusViewController: UITableViewController {
 
-    let campuses = RouteDataModel.sharedInstance.campuses
+    let campuses = RoadModel.sharedInstance.campuses
     
     var selectedCampusIndex: Int!
 

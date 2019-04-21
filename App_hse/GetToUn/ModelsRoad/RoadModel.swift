@@ -1,5 +1,5 @@
 //
-//  RouteDataModel.swift
+//  RoadModel.swift
 //  App_hse
 //
 //  Created by Vladislava on 11/04/2019.
@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class RouteDataModel: NSObject {
+class RoadModel: NSObject {
     
     // Singleton Class
-    static let sharedInstance = RouteDataModel()
+    static let sharedInstance = RoadModel()
     
     // Общежитие
     let dormitories = NSArray(contentsOfFile: Bundle.main.path(forResource: "Dormitories", ofType: "plist")!) as? [Dictionary<String, AnyObject>]
