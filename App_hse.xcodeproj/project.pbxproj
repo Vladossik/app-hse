@@ -87,7 +87,7 @@
 		8673081D223D984F00D80A08 /* Post+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Save.swift"; sourceTree = "<group>"; };
 		867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		867DE77122020218008C0B26 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		867DE77322020B7E008C0B26 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Monaco.ttf; path = ../../fonts/Monaco.ttf; sourceTree = "<group>"; };
+		867DE77322020B7E008C0B26 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
 		867DE7752202FC83008C0B26 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		867DE77722032806008C0B26 /* ConstantColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantColors.swift; sourceTree = "<group>"; };
 		868CCFF5226228CF004849BE /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
@@ -646,13 +646,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GD7JFQT486;
+				DEVELOPMENT_TEAM = 9M3M8V7S76;
 				INFOPLIST_FILE = App_hse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.VAKULENKO.App-hse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.VAKULENKO.AppHSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "App_hse/Side Menu/App_hse-Bridging-Header.h";
@@ -670,13 +670,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GD7JFQT486;
+				DEVELOPMENT_TEAM = 9M3M8V7S76;
 				INFOPLIST_FILE = App_hse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.VAKULENKO.App-hse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.VAKULENKO.AppHSE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "App_hse/Side Menu/App_hse-Bridging-Header.h";
