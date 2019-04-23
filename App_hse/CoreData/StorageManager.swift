@@ -10,41 +10,44 @@ import CoreData
 
 class StorageManager {
     
-    private let coreDataStack: ICoreDataStack
+    private let container: NSPersistentContainer
     
     // MARK: - Initializer
     
     init(coreDataStack: ICoreDataStack) {
-        self.coreDataStack = coreDataStack
+        container = NSPersistentContainer(name: "Model")
+        container.loadPersistentStores { (storeDescription, error) in
+            if let error = error {
+                fatalError("Failed to load store: \(error)")
+            }
+        }
     }
 
     func fetch(completion: @escaping (([PostInfo]) -> ())) {
         var items: [PostInfo] = []
         
         let fetchRequest = NSFetchRequest<Post>(entityName: "Post")
-        coreDataStack.mainContext.perform {
-            do {
-                let posts = try self.coreDataStack.mainContext.fetch(fetchRequest)
-                items = posts.compactMap { post in
-                    guard
-                        let text = post.text,
-                        let avatarURL = post.user?.avatar ?? post.community?.avatar,
-                        let name = post.user?.name ?? post.community?.name
+        do {
+            let posts = try self.container.viewContext.fetch(fetchRequest)
+            items = posts.compactMap { post in
+                guard
+                    let text = post.text,
+                    let avatarURL = post.user?.avatar ?? post.community?.avatar,
+                    let name = post.user?.name ?? post.community?.name
                     else { return nil }
-                    
-                    let surname = post.user?.surname
-                    
-                    return PostInfo(id: Int(post.id),
-                                    text: text,
-                                    avatarURL: avatarURL,
-                                    name: name,
-                                    surname: surname)
-                }
                 
-                completion(items)
-            } catch {
-                completion([])
+                let surname = post.user?.surname
+                
+                return PostInfo(id: Int(post.id),
+                                text: text,
+                                avatarURL: avatarURL,
+                                name: name,
+                                surname: surname)
             }
+            
+            completion(items)
+        } catch {
+            completion([])
         }
     }
     
@@ -53,11 +56,11 @@ class StorageManager {
         fetchRequest.predicate = NSPredicate(format: "id = %@", id as NSNumber)
         
         do {
-            let posts = try coreDataStack.mainContext.fetch(fetchRequest)
+            let posts = try self.container.viewContext.fetch(fetchRequest)
              print(posts)
             if !posts.isEmpty {
-                coreDataStack.mainContext.delete(posts[0])
-                try coreDataStack.mainContext.save()
+                self.container.viewContext.delete(posts[0])
+                try self.container.viewContext.save()
             }
         } catch {
             print("Context delete error: \(error)")
@@ -65,37 +68,12 @@ class StorageManager {
     }
     
     func saveFavoritePost(_ post: Item, profile: Profile, completion: @escaping (String?) -> ()) {
-        coreDataStack.saveContext.perform {
-            Post.insert(post, profile: profile, in: self.coreDataStack.saveContext)
-            self.performSave(in: self.coreDataStack.saveContext, completion: completion)
-        }
+        Post.insert(post, profile: profile, in: self.container.viewContext)
+        try? self.container.viewContext.save()
     }
     
     func saveFavoritePost(_ post: Item, group: Group, completion: @escaping (String?) -> ()) {
-        coreDataStack.saveContext.perform {
-            Post.insert(post, group: group, in: self.coreDataStack.saveContext)
-            self.performSave(in: self.coreDataStack.saveContext, completion: completion)
-        }
-    }
-
-    private func performSave(in context: NSManagedObjectContext, completion: @escaping (String?) -> ()) {
-        if context.hasChanges {
-            context.perform { [weak self] in
-                do {
-                    try context.save()
-                } catch {
-                    print("Context save error: \(error)")
-                    completion(error.localizedDescription)
-                }
-
-                if let parent = context.parent {
-                    self?.performSave(in: parent, completion: completion)
-                } else {
-                    completion(nil)
-                }
-            }
-        } else {
-            completion(nil)
-        }
+        Post.insert(post, group: group, in: self.container.viewContext)
+        try? self.container.viewContext.save()
     }
 }

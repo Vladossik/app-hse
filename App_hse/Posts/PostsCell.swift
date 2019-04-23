@@ -10,7 +10,17 @@ import UIKit
 
 class PostsCell: UITableViewCell {
     
-    var clicked: Bool = false
+    var clicked: Bool = false {
+        didSet {
+            if clicked {
+                btnStar.setImage(UIImage(named: "clickStar"), for: .normal)
+                saveAsFavorite()
+            } else {
+                btnStar.setImage(UIImage(named: "star"), for: .normal)
+                removeFromFavorites()
+            }
+        }
+    }
     
     @IBOutlet weak var nameUser: UILabel!
     @IBOutlet weak var lastNameUser: UILabel!
@@ -19,13 +29,6 @@ class PostsCell: UITableViewCell {
     @IBOutlet weak var btnStar: UIButton!
     @IBAction func btnStarClick(_ sender: Any) {
         clicked = !clicked
-        if clicked {
-            btnStar.setImage(UIImage(named: "clickStar"), for: .normal)
-            saveAsFavorite()
-        } else {
-            btnStar.setImage(UIImage(named: "star"), for: .normal)
-            removeFromFavorites()
-        }
     }
     
     override var frame: CGRect {

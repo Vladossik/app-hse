@@ -30,6 +30,7 @@
 		8651723722665BD4001FBA06 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8651723622665BD4001FBA06 /* MessageUI.framework */; };
 		8651723B22688327001FBA06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8651723A22688327001FBA06 /* Localizable.strings */; };
 		8673081E223D984F00D80A08 /* Post+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673081D223D984F00D80A08 /* Post+Save.swift */; };
+		86770187226D007A00B84977 /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86770186226D007A00B84977 /* Monaco.ttf */; };
 		867DE7702201FA68008C0B26 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */; };
 		867DE77222020218008C0B26 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE77122020218008C0B26 /* Montserrat-Medium.ttf */; };
 		867DE77422020B7E008C0B26 /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867DE77322020B7E008C0B26 /* Monaco.ttf */; };
@@ -85,6 +86,7 @@
 		8651723622665BD4001FBA06 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8651723A22688327001FBA06 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8673081D223D984F00D80A08 /* Post+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Save.swift"; sourceTree = "<group>"; };
+		86770186226D007A00B84977 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
 		867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		867DE77122020218008C0B26 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		867DE77322020B7E008C0B26 /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Monaco.ttf; path = ../../fonts/Monaco.ttf; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				867DE77322020B7E008C0B26 /* Monaco.ttf */,
+				86770186226D007A00B84977 /* Monaco.ttf */,
 				867DE77122020218008C0B26 /* Montserrat-Medium.ttf */,
 				867DE76F2201FA68008C0B26 /* Montserrat-Regular.ttf */,
 				882A5C202200F26700D277A5 /* Montserrat-Bold.ttf */,
@@ -399,6 +402,7 @@
 				868CCFFE22634006004849BE /* Dormitories.plist in Resources */,
 				8651723B22688327001FBA06 /* Localizable.strings in Resources */,
 				867DE77222020218008C0B26 /* Montserrat-Medium.ttf in Resources */,
+				86770187226D007A00B84977 /* Monaco.ttf in Resources */,
 				867DE77422020B7E008C0B26 /* Monaco.ttf in Resources */,
 				8628929F21EFA9B2007BA072 /* Main.storyboard in Resources */,
 			);

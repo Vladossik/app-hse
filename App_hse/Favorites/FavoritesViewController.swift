@@ -18,7 +18,6 @@ class FavoritesViewController: UITableViewController {
         super.viewDidLoad()
         
          self.navigationItem.title = "Favorites"
-        
          self.refreshControl = UIRefreshControl()
         
          if let refreshControl = self.refreshControl {
@@ -48,10 +47,11 @@ class FavoritesViewController: UITableViewController {
         headerView.backgroundColor = Colors.veryLightPink
         return headerView
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "\(PostsCell.self)",
             for: indexPath) as? PostsCell {
-            let post = posts[indexPath.row]
+            let post = posts[indexPath.section]
             cell.avatarUser?.kf.setImage(with: post.avatarURL)
             cell.textPost.text = post.text
                 .split(separator: "\n")
